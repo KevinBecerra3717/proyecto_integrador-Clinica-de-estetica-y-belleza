@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <form id=" boton" action="Usuario.html" method="post">
+    <input type="image" src="botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
+  </form>
+  <title>Calendario</title>
+  <style>
+    table {
+      position: absolute;
+      left: 1040px;
+      top: 420px;
+      border-collapse: collapse;
+      margin: auto;
+    }
+    .cuadro-morado {
+        position: absolute;
+        left: 100px;
+        top: 380px;
+        width: 800px;
+        height: 380px;
+        background-color: #8e44ad;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+    
+    label {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    
+    th {
+      background-color: #6b5b95;
+      color: white;
+    }
+    
+    td {
+      background-color: #fff;
+    }
+    
+    td:hover {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    
+    .today {
+      background-color: #c06c84;
+      color: white;
+      font-weight: bold;
+    }
+    
+    caption {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: #6b5b95;
+      color: white;
+    }
+    #calendario {
+    position: absolute;
+    left: 1000px;
+    top: 360px;
+    width: 400px;
+    height: 400px;
+    
+  </style>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+  <div class="cuadro-morado">
+    <br><br><label for="nombres" style="display: inline-block; margin-left: 350px;">NombreCita</label><br><br><br><br>
+    <label for="lugar" style="display: inline-block; margin-left: 20px;">Lugar:</label>
+    <label for="entradaLugar" style="display: inline-block; margin-left: 20px;">texto</label><br><br>
+    <label for="hora" style="display: inline-block; margin-left: 20px;">Hora:</label>
+    <label for="entradaHora" style="display: inline-block; margin-left: 20px;">texto</label><br><br>
+    <label for="medico" style="display: inline-block; margin-left: 20px;">Médico</label>
+    <label for="entradaMedico" style="display: inline-block; margin-left: 20px;">texto</label><br><br>
+    <label for="indicaciones" style="display: inline-block; margin-left: 20px;">Indicaciones:</label>
+    <label for="entradaIndicaciones" style="display: inline-block; margin-left: 20px;">texto</label>
+  </div>
+  <input type="image" src="botonAdelante.png" alt="Botón de adelante" style="position: absolute; top: 400px; left: 750px;">
+  <input type="image" src="botonAtras.png" alt="Botón de atras" style="position: absolute; top: 400px; left: 200px;">
+  <img id="calendario" src="calendario.png" alt="imagen">
+  <table>
+    <caption>Febrero 2023</caption>
+    <tr>
+      <th>Lun</th>
+      <th>Mar</th>
+      <th>Mie</th>
+      <th>Jue</th>
+      <th>Vie</th>
+      <th>Sab</th>
+      <th>Dom</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>
