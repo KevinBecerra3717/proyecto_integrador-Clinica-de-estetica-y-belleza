@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="UTF-8">
+  <div id=" boton" action="main.html" method="post">
+    <input type="image" src="botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
+  </div>
+	<title></title>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+	<h1></h1>
+  <style>
+  form {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    margin-left: -200px; /* La mitad del ancho del formulario */
+  }
+  input.correo{
+    font-size: 24px;
+  }
+  input.contraseña{
+    font-size: 24px;
+  }
+
+  /* Estilos para el label "Ingresar" */
+  label.ingresar {
+    cursor: pointer;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 24px; /* Establece un tamaño de fuente de 24px */
+  }
+  label.cuenta {
+    cursor: pointer;
+    color: blue;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 16px; /* Establece un tamaño de fuente de 24px */
+  }
+  /*label.eres {
+    text-align: center; /* Centra el texto del label 
+    display: block; /* Hace que el label sea un bloque para poder centrarlo 
+    margin: 0 auto; /* Centra el bloque horizontalmente 
+  }*/
+  #contenedor {
+    text-align: center; /* Centra el contenido horizontalmente */
+  }
+
+</style>
+
+<form>
+  <input type="text" id="correo" name="correo" size="50" placeholder="Correo electrónico"><br><br><br>
+  <input type="password" id="contraseña" name="contraseña" size="50" placeholder="Contraseña"><br><br><br>
+  
+  <div id="contenedor">
+    <form action="registro.html" method="post">
+    <label class="ingresar" onclick="submitForm()">Ingresar</label><br><br><br>
+    </form>
+    <label class="eres">¿Eres nuevo? Crea una </label>
+    <label class="cuenta" onclick="submitForm()">cuenta aquí</label>
+  </div>
+  
+</form>
+
+
+<script>
+  function submitForm() {
+    document.getElementsByTagName("form")[0].submit();
+  }
+</script>
+</body>
+</html>
