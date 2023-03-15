@@ -31,7 +31,9 @@ se usaron proyectos open source:
 ![main]
 
 
-
-[logo]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/logo.jpeg>
+[//]: # (links)
 [pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/main.html>
+
+[//]: # (IMAGENES)
+[logo]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/logo.png>
 [main]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/main.jpeg>
