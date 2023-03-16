@@ -8,7 +8,8 @@
 
 creación de la topologia, pagina web, base de datos de una clinica estetica de belleza.
 
-
+---
+.
 ## Features
 - creación de algunas funcionalidades de la pagina web
 - creación de la base de datos
@@ -26,11 +27,22 @@ se usaron proyectos open source:
 | ------ | ------ |
 |[Apache]|HTML server with PHP|
 |[MariaDB]|relational database management system|
+.
 
+----------
+.
 
 ## Pagina web
 *Diseño de a pagina web*
 ![main]
+
+.
+
+---
+.
+## Arquitectura de la Aplicación
+*arquitectura de 3 niveles*
+![arq]
 
 
 [//]: # (links)
@@ -41,3 +53,4 @@ se usaron proyectos open source:
 [//]: # (IMAGENES)
 [logo]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/logo.png>
 [main]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/main.jpeg>
+[arq]:<https://raw.githubusercontent.com/KevinBecerra3717/proyecto_integrador-Clinica-de-estetica-y-belleza/main/Arquitectura/Capas.jpeg>
