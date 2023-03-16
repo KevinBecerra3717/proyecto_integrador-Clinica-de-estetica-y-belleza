@@ -4,15 +4,16 @@
 
 [![logo]][pg]
 
-- creación en curso
+![build](https://raw.githubusercontent.com/dwyl/repo-badges/main/svg/build-passing.svg)  ![fun](https://raw.githubusercontent.com/dwyl/repo-badges/main/svg/FunTimes-Guaranteed-brightgreen.svg) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/KevinBecerra3717/proyecto_integrador-Clinica-de-estetica-y-belleza/issues) [![HitCount](https://hits.dwyl.com/KevinBecerra3717/proyecto_integrador-Clinica-de-estetica-y-belleza.svg?style=flat-square)](http://hits.dwyl.com/KevinBecerra3717/proyecto_integrador-Clinica-de-estetica-y-belleza) ![stars](https://img.shields.io/amo/stars/g)
 
 creación de la topologia, pagina web, base de datos de una clinica estetica de belleza.
 
 ---
 .
 ## Features
-- creación de algunas funcionalidades de la pagina web
-- creación de la base de datos
+- Pagina web
+- Base de datos
+- Back end
 
 .
 
@@ -27,6 +28,7 @@ se usaron proyectos open source:
 | ------ | ------ |
 |[Apache]|HTML server with PHP|
 |[MariaDB]|relational database management system|
+
 .
 
 ----------
