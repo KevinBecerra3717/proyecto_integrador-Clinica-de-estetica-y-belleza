@@ -22,8 +22,10 @@ creación de la topologia, pagina web, base de datos de una clinica estetica de 
 
 se usaron proyectos open source:
 
-|Tech|link|
+|Tech|Description|
 | ------ | ------ |
+|[Apache]|HTML server with PHP|
+|[MariaDB]|relational database management system|
 
 
 ## Pagina web
@@ -33,6 +35,8 @@ se usaron proyectos open source:
 
 [//]: # (links)
 [pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/main.html>
+[Apache]:<https://httpd.apache.org/>
+[MariaDB]: <https://mariadb.org/>
 
 [//]: # (IMAGENES)
 [logo]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/logo.png>
