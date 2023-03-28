@@ -2,18 +2,18 @@
 <html>
 <head> 
   <meta charset="UTF-8">
-  <form action="main.html" method="post">
-    <input type="image" src="botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
-  </form>
+  <div id=" boton" action="main.html" method="post">
+    <input type="image" src="../resources/botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
+  </div>
 	<title></title>
 </head>
 <body>
-  <link rel="stylesheet" type="text/css" href="estilos.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<h1></h1>
   <style>
   form {
     position: absolute;
-    top: 400px;
+    top: 500px;
     left: 50%;
     margin-left: -200px; /* La mitad del ancho del formulario */
   }
@@ -48,17 +48,15 @@
 </style>
 
 <form>
-  <input type="text" id="nombre" name="correo" size="50" placeholder="Nombre y apellido"><br><br>
-  <input type="password" id="identificacion" name="contraseña" size="50" placeholder="Identificación"><br><br>
-  <input type="text" id="direccion" name="correo" size="50" placeholder="Dirección"><br><br>
-  <input type="password" id="telefono" name="contraseña" size="50" placeholder="Teléfono"><br><br>
-  <input type="text" id="correo" name="correo" size="50" placeholder="Correo electrónico"><br><br>
-  <input type="password" id="contraseña" name="contraseña" size="50" placeholder="Contraseña"><br><br>
-  <input type="password" id="rectcontraseña" name="contraseña" size="50" placeholder="Rectificar contraseña"><br><br>
+  <input type="text" id="correo" name="correo" size="50" placeholder="Correo electrónico"><br><br><br>
+  <input type="password" id="contrasena" name="contraseña" size="50" placeholder="Contraseña"><br><br><br>
+  
   <div id="contenedor">
-    <label class="ingresar" onclick="submitForm()">Ingresar</label><br><br>
-    <label class="tienes">¿Ya tienes una cuenta? </label>
-    <label class="cuenta" onclick="submitForm()">ingresa aquí</label>
+    <form action="registro.html" method="post">
+    <label class="ingresar" onclick="submitForm()">Ingresar</label><br><br><br>
+    </form>
+    <label class="eres">¿Eres nuevo? Crea una </label>
+    <a class="cuenta" href = "registro.html">cuenta aquí</a>
   </div>
   
 </form>

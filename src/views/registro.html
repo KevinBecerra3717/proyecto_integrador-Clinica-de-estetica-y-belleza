@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <form action="main.html" method="post">
+    <input type="image" src="../resources/botonHome.png" alt="Botón de home"
+      style="position: absolute; top: 60px; left: 1350px;">
+  </form>
+  <title></title>
+</head>
+
+<body>
+  <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+  <h1></h1>
+  <style>
+    form {
+      position: absolute;
+      top: 400px;
+      left: 50%;
+      margin-left: -200px;
+      /* La mitad del ancho del formulario */
+    }
+
+    input.correo {
+      font-size: 24px;
+    }
+
+    input.contraseña {
+      font-size: 24px;
+    }
+
+    /* Estilos para el label "Ingresar" */
+    label.ingresar {
+      cursor: pointer;
+      font-family: 'K2D', sans-serif;
+      /* Aplica la fuente K2D */
+      font-size: 24px;
+      /* Establece un tamaño de fuente de 24px */
+    }
+
+    label.cuenta {
+      cursor: pointer;
+      color: blue;
+      font-family: 'K2D', sans-serif;
+      /* Aplica la fuente K2D */
+      font-size: 16px;
+      /* Establece un tamaño de fuente de 24px */
+    }
+
+    /*label.eres {
+    text-align: center; /* Centra el texto del label 
+    display: block; /* Hace que el label sea un bloque para poder centrarlo 
+    margin: 0 auto; /* Centra el bloque horizontalmente 
+  }*/
+    #contenedor {
+      text-align: center;
+      /* Centra el contenido horizontalmente */
+    }
+  </style>
+
+  <form action="../php/registro_usuarios.php" class="formulario_register" method="post">
+    <input type="text" id="nombre" name="nombres" size="50" placeholder="Nombres"><br><br>
+    <input type="text" id="apellidos" name="apellidos" size="50" placeholder="Apellidos"><br><br>
+    <input type="text" id="identificacion" name="identificacion" size="50" placeholder="Identificación"><br><br>
+    <input type="text" id="direccion" name="direccion" size="50" placeholder="Dirección"><br><br>
+    <input type="text" id="telefono" name="telefono" size="50" placeholder="Teléfono"><br><br>
+    <input type="text" id="correo" name="correo" size="50" placeholder="Correo electrónico"><br><br>
+    <input type="password" id="contrasena" name="contrasena" size="50" placeholder="Contraseña"><br><br>
+    <input type="password" id="rectcontrasena" name="rectcontrasena" size="50"
+      placeholder="Rectificar contraseña"><br><br>
+    <div id="contenedor">
+      <label class="ingresar" onclick="submitForm()">Ingresar</label><br><br>
+      <label class="tienes">¿Ya tienes una cuenta? </label>
+      <a class="cuenta" href="login.html">ingresa aquí</a>
+    </div>
+
+  </form>
+
+
+  <script>
+    function submitForm() {
+      document.getElementsByTagName("form")[0].submit();
+    }
+  </script>
+</body>
+
+</html>
