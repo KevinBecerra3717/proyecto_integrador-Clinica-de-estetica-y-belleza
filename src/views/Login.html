@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Login</title>
+</head>
+<header>
+
+    <div class="menu-PreLogin">
+        <!-- BOTON DE VOLVER -->
+        <div class="notificaciones">
+          <a href="Index.html" class="iconos-menu">
+              <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </a>
+      </div>
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div>
+
+        <!-- BARRA NAVBAR --> 
+        <div>
+            <ul class="menu_items">
+
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contactanos.html">Contactanos</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- REDES SOCIALES -->
+        <div class="social_media"> 
+            <ion-icon name="logo-facebook" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-instagram" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-tiktok" style="height: 50px; width: 50px;"></ion-icon>
+        </div>
+    </div>
+
+</header>
+
+<body>
+
+ <!-- CONTENIDO PRINCIPAL -->
+
+<div class="main_content">
+    <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+    <div class="slider_content">
+      <div class="slider_description">
+        <div class="slider_title">
+          <h1>Aeshealthic</h1>
+          <div class="line_gradient">
+            <div class="line_gradient_separation"></div>
+          </div>
+        </div>
+        <p>Conéctate con nosotros y descubre un mundo de belleza en nuestra clínica estética</p>
+      </div>
+      <!-- CAJA DE LOGIN -->
+      <div class="slider_login">
+        <form class="login-form" action="" method="post">
+          <h2>Iniciar sesión</h2>
+          <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="type"> Tipo de usuario: </label>
+            <select id="type" name="type">
+              <option value="user"> Cliente </option>
+              <option value="admin"> Administrador </option>
+              <option value="admin"> Gerente </option>
+            </select>
+          </div>
+          <h4>¿No tienes una cuenta? <a href="Crear-cuenta.html">Crear una.</a></h4>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+    <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+</div>
+  
+
+<div class="advantages">
+
+</div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</body>
+</html>
