@@ -46,9 +46,8 @@ se usaron proyectos open source:
 *arquitectura de 3 niveles*
 ![arq]
 
-
 [//]: # (links)
-[pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/main.html>
+[pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/src/views/main.html>
 [Apache]:<https://httpd.apache.org/>
 [MariaDB]: <https://mariadb.org/>
 

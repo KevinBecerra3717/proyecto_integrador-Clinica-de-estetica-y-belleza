@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <div action="Gerente.html" method="post">
+  <input type="image" src="../resources/botonHome.png" alt="Botón de ingresar" style="position: absolute; top: 60px; left: 1350px;">
+  </div>
+	<title></title>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+  <style>
+  .cuadro-morado {
+        position: absolute;
+        left: 500px;
+        top: 380px;
+        width: 500px;
+        height: 410px;
+        background-color: #8e44ad;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+  form {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    margin-left: -200px; /* La mitad del ancho del formulario */
+  }
+  input.lista{
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  input.fecha{
+    font-size: 24px;
+    margin-left: 25px;
+  }
+  input.hora{
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  input[type="text"] {
+  margin-left: 10px;
+  }
+  input[type="date"] {
+  margin-left: 7px;
+  }
+  input[type="time"] {
+  margin-left: 17px;
+  }
+
+  /* Estilos para el label "Ingresar" */
+  label.ingresar {
+    cursor: pointer;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 24px; /* Establece un tamaño de fuente de 24px */
+  }
+  label.cuenta {
+    cursor: pointer;
+    color: blue;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 16px; /* Establece un tamaño de fuente de 24px */
+  }
+  label.guardar {
+    cursor: pointer;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 24px; /* Establece un tamaño de fuente de 24px */
+    color: white;
+  }
+  #contenedor {
+    text-align: center; /* Centra el contenido horizontalmente */
+  }
+
+</style>
+    <div class="cuadro-morado">
+      <br><br><label for="servicio" style="display: inline-block; margin-left: 50px; color: white">Servicio:       </label>
+      <input type="text" id="servicio" name="servicio" style="display: inline-block; margin-left: 0px"><br><br>
+      <label for="medico" style="display: inline-block; margin-left: 50px; color: white">Medico:      </label>
+      <select id="lista" name="lista">
+        <option value="opcion1">Médico 1</option>
+        <option value="opcion2">Médico 2</option>
+        <option value="opcion3">Médico 3</option>
+      </select><br><br>
+      <label for="fecha" style="display: inline-block; margin-left: 50px; color: white">Fecha:       </label>
+      <input type="date" id="fecha" name="fecha"><br><br>
+      <label for="hora" style="display: inline-block; margin-left: 50px; color: white">Hora:        </label>
+      <input type="time" id="hora" name="hora"><br><br>
+      <label for="lugar" style="display: inline-block; margin-left: 50px; color: white">Lugar:       </label>
+      <input type="text" id="lugar" name="lugar"><br><br>
+      <label for="indicaciones" style="display: inline-block; margin-left: 50px; color: white">Indicaciones:</label>
+      <textarea id="texto-largo" name="texto-largo" rows="4" cols="50" style="display: inline-block; margin-left: 50px;"></textarea><br><br><br>
+      <label class="guardar" onclick="submitForm()" style="display: inline-block; margin-left: 200px;">Guardar</label>
+    </div>
+    <script>
+    function submitForm() {
+      document.getElementsByTagName("form")[0].submit();
+    }
+  </script>
+</body>
+</html>

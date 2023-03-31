@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <div action="main.html" method="post">
+    <input type="image" src="../resources/botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
+  </div>
+  <title></title>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+  <style>
+  .cuadro-morado {
+        position: absolute;
+        left: 500px;
+        top: 380px;
+        width: 500px;
+        height: 280px;
+        background-color: #8e44ad;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+  form {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    margin-left: -200px; /* La mitad del ancho del formulario */
+  }
+ 
+  /* Estilos para el label "Ingresar" */
+  label.ingresar {
+    cursor: pointer;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 24px; /* Establece un tamaño de fuente de 24px */
+  }
+  label.cuenta {
+    cursor: pointer;
+    color: blue;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 16px; /* Establece un tamaño de fuente de 24px */
+  }
+  label.guardar {
+    cursor: pointer;
+    font-family: 'K2D', sans-serif; /* Aplica la fuente K2D */
+    font-size: 24px; /* Establece un tamaño de fuente de 24px */
+    color: white;
+  }
+  #contenedor {
+    text-align: center; /* Centra el contenido horizontalmente */
+  }
+
+</style>
+    <div class="cuadro-morado">
+      <br><br><label for="servicio" style="display: inline-block; margin-left: 50px; color: white">Servicios:</label>
+      <select id="lista" name="lista" style="display: inline-block; margin-left: 80px">
+        <option value="opcion1">Servicio 1</option>
+        <option value="opcion2">Servicio 2</option>
+        <option value="opcion3">Servicio 3</option>
+      </select><br><br>
+      <br><br><label for="feachas" style="display: inline-block; margin-left: 50px; color: white">Fechas disponibles:</label>
+      <select id="lista" name="lista" style="display: inline-block; margin-left: 10px">
+        <option value="fecha1">horario 1</option>
+        <option value="fecha2">horario 2</option>
+        <option value="fecha3">horario 3</option>
+      </select><br><br>
+      <br><br><label class="guardar" onclick="submitForm()" style="display: inline-block; margin-left: 200px;">Guardar</label>
+    </div>
+    <script>
+    function submitForm() {
+      document.getElementsByTagName("form")[0].submit();
+    }
+  </script>
+</body>
+</html>

@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <div action="login.html" method="post">
-  <input type="image" src="../resources/botonVacio.png" alt="Botón de ingresar" style="position: absolute; top: 60px; left: 1350px;">
-  <label for="EntradaNombres" style="position: absolute; top: 75px; left: 1360px;">AD</label>
-  </div>
-  <form action="BusquedaUsuarios.html" method="post">
-  <input type="image" src="../resources/botonUsuarios.png" alt="Botón de lista de usuarios" style="position: absolute; top: 60px; left: 1220px;">
-  </form>
-  <style>
-    label {
-        display: block;
-        font-size: 40px;
-        font-weight: bold;
-        color: #fff;
-        margin-bottom: 10px;
-      }
-  </style>
-	<title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Administrador</title>
 </head>
+
+<header>
+
+    <div class="menu-login">
+        <!-- VOLVER -->
+        <div class="volver">
+            <a href="Index.html" class="iconos-menu">
+                
+            </a>
+        </div>
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="" height="100"></div> 
+
+        <!-- BARRA NAVBAR --> 
+        <b> <div class="nombre"> Bienvenido/a Admin. Miguel </div> </b>
+
+        <!-- BOTONES -->
+        <div class="social_media"> 
+
+            <ion-icon name="notifications-outline" class="iconos-menu"></ion-icon>
+            <ion-icon name="mail-outline" class="iconos-menu"></ion-icon>
+            <ion-icon name="document-text-outline" class="iconos-menu"></ion-icon>
+            <ion-icon name="calendar-outline" class="iconos-menu"></ion-icon>
+            <button id="user-btn" class="iconos-menu">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div id="user-popup"></div>
+              
+        </div>
+
+</header>
+
 <body>
-  <link rel="stylesheet" type="text/css" href="estilos.css">
-	<h1></h1>
-  <input type="image" src="../resources/img1.png" alt="imagen1" style="position: absolute; top: 380px; left: 15px;">
-  <input type="image" src="../resources/mensaje1.png" alt="mensaje1" style="position: absolute; top: 600px; left: 580px;">
-  <input type="image" src="../resources/botonAdelante.png" alt="Botón de adelante" style="position: absolute; top: 640px; left: 1300px;">
-  <input type="image" src="../resources/botonAtras.png" alt="Botón de atras" style="position: absolute; top: 640px; left: 100px;">
+
+    <style>
+        h1{
+            color: #054965;
+        }
+    </style>
+       <!-- CONTENIDO PRINCIPAL -->
+       <div class="main_content">
+        <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+        <div class="slider_content">
+            <div class="slider_description">
+                <div class="slider_title">
+                    <h1>Administrador</h1>
+                    <div class="line_gradient">
+                        <div class="line_gradient_separation"></div>
+                    </div>
+                </div>
+
+                <div class="enlaces">
+                    
+                    <div class="inventario">
+                        <a href="Administrador-inventario.html"> Inventario </a><br>
+                    </div>
+                   
+                    <div class="usuarios">
+                        <a href="productos.html"> Usuarios </a><br>
+                    </div>
+
+                    <div class="clientes">
+                        <a href="productos.html"> Clientes </a><br>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+    </div>
+
+    <div class="advantages">
+
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
 </body>
 </html>
