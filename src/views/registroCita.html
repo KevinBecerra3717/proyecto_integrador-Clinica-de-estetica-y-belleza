@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <form action="main.html" method="post">
-    <input type="image" src="../resources/botonHome.png" alt="Botón de home" style="position: absolute; top: 60px; left: 1350px;">
-  </form>
+  <div action="Gerente.html" method="post">
+  <input type="image" src="../resources/botonHome.png" alt="Botón de ingresar" style="position: absolute; top: 60px; left: 1350px;">
+  </div>
 	<title></title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         left: 500px;
         top: 380px;
         width: 500px;
-        height: 380px;
+        height: 410px;
         background-color: #8e44ad;
         margin-bottom: 20px;
         border-radius: 5px;
@@ -73,7 +73,9 @@
 
 </style>
     <div class="cuadro-morado">
-      <br><br><label for="medico" style="display: inline-block; margin-left: 50px; color: white">Medico:      </label>
+      <br><br><label for="servicio" style="display: inline-block; margin-left: 50px; color: white">Servicio:       </label>
+      <input type="text" id="servicio" name="servicio" style="display: inline-block; margin-left: 0px"><br><br>
+      <label for="medico" style="display: inline-block; margin-left: 50px; color: white">Medico:      </label>
       <select id="lista" name="lista">
         <option value="opcion1">Médico 1</option>
         <option value="opcion2">Médico 2</option>
@@ -84,7 +86,7 @@
       <label for="hora" style="display: inline-block; margin-left: 50px; color: white">Hora:        </label>
       <input type="time" id="hora" name="hora"><br><br>
       <label for="lugar" style="display: inline-block; margin-left: 50px; color: white">Lugar:       </label>
-      <input type="text" id="fecha" name="fecha"><br><br>
+      <input type="text" id="lugar" name="lugar"><br><br>
       <label for="indicaciones" style="display: inline-block; margin-left: 50px; color: white">Indicaciones:</label>
       <textarea id="texto-largo" name="texto-largo" rows="4" cols="50" style="display: inline-block; margin-left: 50px;"></textarea><br><br><br>
       <label class="guardar" onclick="submitForm()" style="display: inline-block; margin-left: 200px;">Guardar</label>
