@@ -1,0 +1,410 @@
+/*Estilos Index.html*/
+
+* {
+    font-family: 'Lexend Deca';
+}
+
+.whatsapp {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+  
+body{
+    background-color: #FFA3FD;
+}
+html {
+    background: rgb(255,255,255);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(230,236,239,1) 100%);
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.circular-image {
+    display: flex;
+    align-items: flex-end;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+.menu {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #FFA3FD;
+    display: grid;
+    grid-template-columns: 15vw 40vw 15vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-PreLogin{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #FFA3FD;
+    display: grid;
+    grid-template-columns: 15vw 15vw 40vw 15vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.createAccount{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.menu-PreLogin-CreateAccount {
+    display: flex;
+    align-items: center;
+}
+.notificaciones {
+    margin-right: 20px;
+}
+.iconos-menu {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    margin-left: 20px;
+}
+img {
+    display: block;
+}
+
+.iconos-menu{
+    color: #054965;
+    font-size: 3em; /* tamaño de fuente */
+    padding: 10px 20px; /* relleno */
+}
+
+.menu-login{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #FFA3FD;
+    display: grid;
+    grid-template-columns: 15vw 15vw 40vw 30vw; 
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-login-cliente{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #FFA3FD;
+    display: grid;
+    grid-template-columns: 15vw 15vw 40vw 20vw; 
+    align-items: center;
+    justify-content: center;
+}
+.nombre{
+    text-align:left;
+    font-size: x-large;
+    color: #054965;
+}
+.menu_items {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 100%;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.menu_items li{
+    text-decoration: none;
+}
+
+.menu_items li:hover{
+    text-decoration: none;
+    color: #865DFF;
+}
+.social_media {
+    color: #063C53;
+    display: flex;
+    justify-content: end;
+    gap: 20px; /* ajusta el valor según el espacio que desees */
+}
+.main_content {
+    background-color: #FFA3FD;
+    display: grid;
+    grid-template-columns: 5vw 90vw 5vw;
+    align-items: center;
+}
+
+.slider_content {
+    background-color: #FFEAEA;
+    box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.16);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 4rem;
+    box-sizing: border-box;
+}
+
+.slider_description {
+    display: grid; /* establece el tipo de visualización de los elementos seleccionados en "grid" o "cuadrícula". Esto significa que los elementos se colocarán en un formato de cuadrícula, con filas y columnas. */
+    grid-template-columns: 1fr; /* especifica el tamaño y el número de columnas en la cuadrícula. */
+    column-gap: 0; /* establece la distancia entre las columnas de la cuadrícula en cero píxeles. */
+}
+
+.slider_content img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider_title {
+    width: fit-content;
+}
+
+.line_gradient{
+    display: grid;
+    justify-items: end;
+    position: relative;
+    top: -5rem;
+}
+
+.line_gradient_separation {
+    width: 10%;
+    display: grid;
+    height: 0.6rem;
+    background: linear-gradient(45deg, rgba(255,163,253,0) 0%, rgba(255,163,253,1) 48%, rgba(67,160,154,1) 100%);
+}
+
+.primary_button {
+    background: linear-gradient(45deg, rgba(255,163,253,0) 0%, rgba(255,163,253,1) 48%,rgb(160, 55, 158) 100%);
+    color: #FAFAFA;
+    margin: 1rem 3rem;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.advantages {
+    background-color: #054965;
+    height: 150px;
+}
+/* ESTILOS Crear-Cuenta.html */
+
+.form-loginForm{
+    background-color: #FFA3FD;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.label-loginForm{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2E2E2E;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+padding: 10px;
+margin-bottom: 10px;
+border: none;
+border-radius: 5px;
+width: 100%;
+}
+
+input[type="submit"] {
+background-color: #2E2E2E;
+color: #FFFFFF;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 100%;
+}
+
+input[type="submit"]:hover {
+background-color: #FFFFFF;
+color: #2E2E2E;
+}
+
+/*ESTILOS Administrador.html*/
+
+.enlaces {
+    display: flex;
+    justify-content: center;
+    }
+    
+    .enlaces > div {
+    background-color: #FFA3FD;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .enlaces > div::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    }
+    
+    .enlaces > div:hover::before {
+    transform: translateY(0);
+    }
+    
+    .enlaces a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    }
+    
+    .enlaces a:hover {
+    color: white;
+    }
+    
+    .inventario {
+    width: 150px;
+    height: 150px;
+    }
+    
+    .usuarios {
+    width: 150px;
+    height: 150px;
+    }
+    
+    .clientes {
+    width: 150px;
+    height: 150px;
+    }
+
+.slider_login {
+    font-family: 'Lexend Deca';
+    float: right;
+    width: 300px;
+  }
+  
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #FFA3FD;
+    border-radius: 10px;
+  }
+  
+  .login-form h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    color: #063C53;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFA3FD;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #dfb2de;
+  }
+  
+  .slider_login {
+    float: right;
+    width: 300px;
+  }
+
+  #user-btn {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Color base */
+:root {
+--primary-color: #FFA3FD;
+}
+
+/* Estilos del popup */
+#user-popup {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+}
+
+#user-popup p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    font: 'Lexend Deca';
+}
+
+#user-popup button {
+    background-color: var(--primary-color);
+    color: #063C53;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#user-popup button:hover {
+    background-color: #dfb2de;
+}
+
+
+
+  
