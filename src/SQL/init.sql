@@ -2,20 +2,27 @@
 -- Thu Mar 30 18:12:59 2023
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+SET
+  @OLD_UNIQUE_CHECKS = @ @UNIQUE_CHECKS,
+  UNIQUE_CHECKS = 0;
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+SET
+  @OLD_FOREIGN_KEY_CHECKS = @ @FOREIGN_KEY_CHECKS,
+  FOREIGN_KEY_CHECKS = 0;
+
+SET
+  @OLD_SQL_MODE = @ @SQL_MODE,
+  SQL_MODE = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8;
+
+USE `mydb`;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`tipo_usuarios`
@@ -23,9 +30,8 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`tipo_usuarios` (
   `tu_id` INT NOT NULL,
   `tu_descripcion` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`tu_id`))
-ENGINE = InnoDB;
-
+  PRIMARY KEY (`tu_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`usuarios`
@@ -44,13 +50,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuarios` (
   UNIQUE INDEX `users_email_UNIQUE` (`us_correo` ASC) VISIBLE,
   UNIQUE INDEX `user_documento_UNIQUE` (`us_documento` ASC) VISIBLE,
   INDEX `fk_usuarios_tipo_usuarios1_idx` (`tu_id` ASC) VISIBLE,
-  CONSTRAINT `fk_usuarios_tipo_usuarios1`
-    FOREIGN KEY (`tu_id`)
-    REFERENCES `mydb`.`tipo_usuarios` (`tu_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_usuarios_tipo_usuarios1` FOREIGN KEY (`tu_id`) REFERENCES `mydb`.`tipo_usuarios` (`tu_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`paytype`
@@ -58,9 +59,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`paytype` (
   `paytype_id` INT NOT NULL AUTO_INCREMENT,
   `paytype_pay` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`paytype_id`))
-ENGINE = InnoDB;
-
+  PRIMARY KEY (`paytype_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`citas`
@@ -74,13 +74,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`citas` (
   `paytype_paytype_id` INT NOT NULL,
   PRIMARY KEY (`citas_id`),
   INDEX `fk_citas_paytype1_idx` (`paytype_paytype_id` ASC) VISIBLE,
-  CONSTRAINT `fk_citas_paytype1`
-    FOREIGN KEY (`paytype_paytype_id`)
-    REFERENCES `mydb`.`paytype` (`paytype_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_citas_paytype1` FOREIGN KEY (`paytype_paytype_id`) REFERENCES `mydb`.`paytype` (`paytype_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`product`
@@ -91,9 +86,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `product_sale_price` INT NOT NULL,
   `product_description` VARCHAR(500) NULL,
   `product_image` VARCHAR(500) NULL,
-  PRIMARY KEY (`product_id`))
-ENGINE = InnoDB;
-
+  PRIMARY KEY (`product_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`stock`
@@ -101,9 +95,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`stock` (
   `stock_id` INT NOT NULL,
   `stock_quantity` INT NOT NULL,
-  `stock_location` VARCHAR(45) NOT NULL)
-ENGINE = InnoDB;
-
+  `stock_location` VARCHAR(45) NOT NULL
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`order`
@@ -116,13 +109,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`order` (
   `product_product_id` INT NOT NULL,
   PRIMARY KEY (`order_id`),
   INDEX `fk_order_product1_idx` (`product_product_id` ASC) VISIBLE,
-  CONSTRAINT `fk_order_product1`
-    FOREIGN KEY (`product_product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_order_product1` FOREIGN KEY (`product_product_id`) REFERENCES `mydb`.`product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pursh_order`
@@ -137,18 +125,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pursh_order` (
   PRIMARY KEY (`pursh_id`),
   INDEX `fk_pursh_order_paytype1_idx` (`paytype_paytype_id` ASC) VISIBLE,
   INDEX `fk_pursh_order_usuarios1_idx` (`usuarios_us_id` ASC) VISIBLE,
-  CONSTRAINT `fk_pursh_order_paytype1`
-    FOREIGN KEY (`paytype_paytype_id`)
-    REFERENCES `mydb`.`paytype` (`paytype_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pursh_order_usuarios1`
-    FOREIGN KEY (`usuarios_us_id`)
-    REFERENCES `mydb`.`usuarios` (`us_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_pursh_order_paytype1` FOREIGN KEY (`paytype_paytype_id`) REFERENCES `mydb`.`paytype` (`paytype_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pursh_order_usuarios1` FOREIGN KEY (`usuarios_us_id`) REFERENCES `mydb`.`usuarios` (`us_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`bill`
@@ -160,13 +139,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`bill` (
   `pursh_order_pursh_id` INT NOT NULL,
   PRIMARY KEY (`bill_id`),
   INDEX `fk_bill_pursh_order1_idx` (`pursh_order_pursh_id` ASC) VISIBLE,
-  CONSTRAINT `fk_bill_pursh_order1`
-    FOREIGN KEY (`pursh_order_pursh_id`)
-    REFERENCES `mydb`.`pursh_order` (`pursh_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_bill_pursh_order1` FOREIGN KEY (`pursh_order_pursh_id`) REFERENCES `mydb`.`pursh_order` (`pursh_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`aud_product`
@@ -176,9 +150,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`aud_product` (
   `aud_product_name` VARCHAR(255) NOT NULL,
   `aud_product_user` VARCHAR(255) NOT NULL,
   `aud_product_statement` VARCHAR(20) NOT NULL,
-  `aud_product_date` DATETIME NOT NULL)
-ENGINE = InnoDB;
-
+  `aud_product_date` DATETIME NOT NULL
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`user_info_has_citas`
@@ -190,18 +163,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user_info_has_citas` (
   PRIMARY KEY (`citas_citas_id`, `usuarios_us_id`),
   INDEX `fk_user_info_has_citas_citas1_idx` (`citas_citas_id` ASC) VISIBLE,
   INDEX `fk_user_info_has_citas_usuarios1_idx` (`usuarios_us_id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_info_has_citas_citas1`
-    FOREIGN KEY (`citas_citas_id`)
-    REFERENCES `mydb`.`citas` (`citas_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_info_has_citas_usuarios1`
-    FOREIGN KEY (`usuarios_us_id`)
-    REFERENCES `mydb`.`usuarios` (`us_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_user_info_has_citas_citas1` FOREIGN KEY (`citas_citas_id`) REFERENCES `mydb`.`citas` (`citas_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_info_has_citas_usuarios1` FOREIGN KEY (`usuarios_us_id`) REFERENCES `mydb`.`usuarios` (`us_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`aud_stock`
@@ -212,9 +176,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`aud_stock` (
   `aud_stock_old_quantity` INT NULL,
   `aud_stock_new_quantity` INT NOT NULL,
   `aud_stock_statement` VARCHAR(45) NOT NULL,
-  `aud_stock_date` DATETIME NOT NULL)
-ENGINE = InnoDB;
-
+  `aud_stock_date` DATETIME NOT NULL
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`historical_prices`
@@ -222,9 +185,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`historical_prices` (
   `historical_prices_id` INT NOT NULL,
   `historical_prices_prices` INT NOT NULL,
-  `historical_prices_mod_date` TIMESTAMP(4) NOT NULL)
-ENGINE = InnoDB;
-
+  `historical_prices_mod_date` TIMESTAMP(4) NOT NULL
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pay`
@@ -235,9 +197,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pay` (
   `pay_num_target` INT NOT NULL,
   `pay_CVC` INT NOT NULL,
   `pay_date` TIMESTAMP(4) NOT NULL,
-  PRIMARY KEY (`pay_id`))
-ENGINE = InnoDB;
-
+  PRIMARY KEY (`pay_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`cost`
@@ -246,9 +207,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`cost` (
   `cost_id` INT NOT NULL AUTO_INCREMENT,
   `cost_reference` VARCHAR(255) NOT NULL,
   `cost_value` INT NOT NULL,
-  PRIMARY KEY (`cost_id`))
-ENGINE = InnoDB;
-
+  PRIMARY KEY (`cost_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pursh_order_detail`
@@ -264,18 +224,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pursh_order_detail` (
   PRIMARY KEY (`product_product_id`, `pursh_order_pursh_id`),
   INDEX `fk_product_has_pursh_order_pursh_order1_idx` (`pursh_order_pursh_id` ASC) VISIBLE,
   INDEX `fk_product_has_pursh_order_product1_idx` (`product_product_id` ASC) VISIBLE,
-  CONSTRAINT `fk_product_has_pursh_order_product1`
-    FOREIGN KEY (`product_product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_product_has_pursh_order_pursh_order1`
-    FOREIGN KEY (`pursh_order_pursh_id`)
-    REFERENCES `mydb`.`pursh_order` (`pursh_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+  CONSTRAINT `fk_product_has_pursh_order_product1` FOREIGN KEY (`product_product_id`) REFERENCES `mydb`.`product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_product_has_pursh_order_pursh_order1` FOREIGN KEY (`pursh_order_pursh_id`) REFERENCES `mydb`.`pursh_order` (`pursh_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`bill_has_product`
@@ -291,246 +242,855 @@ CREATE TABLE IF NOT EXISTS `mydb`.`bill_has_product` (
   PRIMARY KEY (`bill_bill_id`, `product_product_id`),
   INDEX `fk_bill_has_product_product1_idx` (`product_product_id` ASC) VISIBLE,
   INDEX `fk_bill_has_product_bill1_idx` (`bill_bill_id` ASC) VISIBLE,
-  CONSTRAINT `fk_bill_has_product_bill1`
-    FOREIGN KEY (`bill_bill_id`)
-    REFERENCES `mydb`.`bill` (`bill_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_bill_has_product_product1`
-    FOREIGN KEY (`product_product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  CONSTRAINT `fk_bill_has_product_bill1` FOREIGN KEY (`bill_bill_id`) REFERENCES `mydb`.`bill` (`bill_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_has_product_product1` FOREIGN KEY (`product_product_id`) REFERENCES `mydb`.`product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 USE `mydb`;
 
-DELIMITER $$
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT` AFTER INSERT ON `product` FOR EACH ROW
-BEGIN
-INSERT INTO aud_product (aud_product_id, aud_product_name, aud_product_user, aud_product_statement, aud_product_date)
-VALUES(NEW.product_id, NEW.product_name, user(), "INSERT", now());
-END$$
+DELIMITER $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT`
+AFTER
+INSERT
+  ON `product` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_product (
+    aud_product_id,
+    aud_product_name,
+    aud_product_user,
+    aud_product_statement,
+    aud_product_date
+  )
+VALUES
+(
+    NEW.product_id,
+    NEW.product_name,
+    user(),
+    "INSERT",
+    now()
+  );
 
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT_1` AFTER INSERT ON `product` FOR EACH ROW
-BEGIN
-INSERT INTO historical_prices (historical_prices_id, historical_prices_prices, historical_prices_mod_date)
-VALUES(NEW.product_id, NEW.product_sale_price, now());
-END$$
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT_1`
+AFTER
+INSERT
+  ON `product` FOR EACH ROW BEGIN
+INSERT INTO
+  historical_prices (
+    historical_prices_id,
+    historical_prices_prices,
+    historical_prices_mod_date
+  )
+VALUES
+(NEW.product_id, NEW.product_sale_price, now());
 
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT_2` AFTER INSERT ON `product` FOR EACH ROW
-BEGIN
-INSERT INTO stock (stock_id, stock_quantity, stock_location)
-VALUES(NEW.product_id, 0, 'BODEGA');
-END$$
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_INSERT_2`
+AFTER
+INSERT
+  ON `product` FOR EACH ROW BEGIN
+INSERT INTO
+  stock (stock_id, stock_quantity, stock_location)
+VALUES
+(NEW.product_id, 0, 'BODEGA');
 
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE` AFTER UPDATE ON `product` FOR EACH ROW
-BEGIN
-INSERT INTO aud_product(aud_product_id, aud_product_name, aud_product_user, aud_product_statement, aud_product_date)
-VALUES(NEW.product_id, OLD.product_name, user(), "UPDATE", now());
-END$$
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE`
+AFTER
+UPDATE
+  ON `product` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_product(
+    aud_product_id,
+    aud_product_name,
+    aud_product_user,
+    aud_product_statement,
+    aud_product_date
+  )
+VALUES
+(
+    NEW.product_id,
+    OLD.product_name,
+    user(),
+    "UPDATE",
+    now()
+  );
 
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE_1` AFTER UPDATE ON `product` FOR EACH ROW
-BEGIN
-	IF OLD.product_sale_price != NEW.product_sale_price THEN
-		INSERT INTO historical_prices (historical_prices_id, historical_prices_prices, historical_prices_mod_date)
-		VALUES(NEW.product_id, NEW.product_sale_price, now());
-	END IF;
-END$$
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE_1`
+AFTER
+UPDATE
+  ON `product` FOR EACH ROW BEGIN IF OLD.product_sale_price != NEW.product_sale_price THEN
+INSERT INTO
+  historical_prices (
+    historical_prices_id,
+    historical_prices_prices,
+    historical_prices_mod_date
+  )
+VALUES
+(NEW.product_id, NEW.product_sale_price, now());
 
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE_2` AFTER UPDATE ON `product` FOR EACH ROW
-BEGIN
-UPDATE stock 
-SET stock_id = NEW.product_id
-WHERE stock_id = OLD.product_id;
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_DELETE` AFTER DELETE ON `product` FOR EACH ROW
-BEGIN
-INSERT INTO aud_product(aud_product_id, aud_product_name, aud_product_user, aud_product_statement, aud_product_date)
-VALUES(OLD.product_id, OLD.product_name, user(), "DELETE", now());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_DELETE_1` AFTER DELETE ON `product` FOR EACH ROW
-BEGIN
-DELETE FROM stock 
-WHERE stock_id = OLD.product_id;
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_INSERT` AFTER INSERT ON `stock` FOR EACH ROW
-BEGIN
-INSERT INTO aud_stock(aud_stock_id, aud_stock_user, aud_stock_old_quantity, aud_stock_new_quantity, aud_stock_statement, aud_stock_date)
-VALUES(NEW.stock_id, user(), NULL, NEW.stock_quantity, "INSERT", now());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_UPDATE` AFTER UPDATE ON `stock` FOR EACH ROW
-BEGIN
-INSERT INTO aud_stock(aud_stock_id, aud_stock_user, aud_stock_old_quantity, aud_stock_new_quantity, aud_stock_statement, aud_stock_date)
-VALUES(NEW.stock_id, user(), OLD.stock_quantity, NEW.stock_quantity, "UPDATE", now());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_DELETE` AFTER DELETE ON `stock` FOR EACH ROW
-BEGIN
-INSERT INTO aud_stock(aud_stock_id, aud_stock_user, aud_stock_old_quantity, aud_stock_new_quantity, aud_stock_statement, aud_stock_date)
-VALUES(OLD.stock_id, user(), OLD.stock_quantity, NULL, "DELETE", now());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`order_AFTER_INSERT` AFTER INSERT ON `order` FOR EACH ROW
-BEGIN
-UPDATE stock
-SET stock_quantity = stock_quantity + NEW.order_quantity
-WHERE stock_id = NEW.product_product_id;
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`pursh_order_detail_BEFORE_INSERT` BEFORE INSERT ON `pursh_order_detail` FOR EACH ROW
-BEGIN
-DECLARE v_stock_quantity INT DEFAULT 0;
-DECLARE message VARCHAR(100);
-SET message = CONCAT('ERROR: Cantidad de producto insuficiente en inventario ',
-	'id_producto: ', NEW.product_product_id,
-	'Stock: ', v_stock_quantity,
-	'Cantidad solicitada: ', NEW.pursh_order_detail_quantity,
-	'Faltante: ', NEW.pursh_order_detail_quantity - v_stock_quantity);
-SELECT stock_quantity INTO v_stock_quantity
-FROM stock
-WHERE stock_id = NEW.product_product_id;
-
-IF (v_cantidad_stock < NEW.pursh_order_detail_quantity) THEN
-	SIGNAL SQLSTATE '45000'
-		SET MESSAGE_TEXT = message;
-ELSE
-	UPDATE stock
-	SET stock_quantity = stock_quantity - NEW.pursh_order_detail_quantity
-	WHERE stock_id = NEW.product_product_id;
 END IF;
-END$$
 
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_UPDATE_2`
+AFTER
+UPDATE
+  ON `product` FOR EACH ROW BEGIN
+UPDATE
+  stock
+SET
+  stock_id = NEW.product_id
+WHERE
+  stock_id = OLD.product_id;
 
-DELIMITER ;
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_DELETE`
+AFTER
+  DELETE ON `product` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_product(
+    aud_product_id,
+    aud_product_name,
+    aud_product_user,
+    aud_product_statement,
+    aud_product_date
+  )
+VALUES
+(
+    OLD.product_id,
+    OLD.product_name,
+    user(),
+    "DELETE",
+    now()
+  );
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`product_AFTER_DELETE_1`
+AFTER
+  DELETE ON `product` FOR EACH ROW BEGIN
+DELETE FROM
+  stock
+WHERE
+  stock_id = OLD.product_id;
+
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_INSERT`
+AFTER
+INSERT
+  ON `stock` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_stock(
+    aud_stock_id,
+    aud_stock_user,
+    aud_stock_old_quantity,
+    aud_stock_new_quantity,
+    aud_stock_statement,
+    aud_stock_date
+  )
+VALUES
+(
+    NEW.stock_id,
+    user(),
+    NULL,
+    NEW.stock_quantity,
+    "INSERT",
+    now()
+  );
+
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_UPDATE`
+AFTER
+UPDATE
+  ON `stock` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_stock(
+    aud_stock_id,
+    aud_stock_user,
+    aud_stock_old_quantity,
+    aud_stock_new_quantity,
+    aud_stock_statement,
+    aud_stock_date
+  )
+VALUES
+(
+    NEW.stock_id,
+    user(),
+    OLD.stock_quantity,
+    NEW.stock_quantity,
+    "UPDATE",
+    now()
+  );
+
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`stock_AFTER_DELETE`
+AFTER
+  DELETE ON `stock` FOR EACH ROW BEGIN
+INSERT INTO
+  aud_stock(
+    aud_stock_id,
+    aud_stock_user,
+    aud_stock_old_quantity,
+    aud_stock_new_quantity,
+    aud_stock_statement,
+    aud_stock_date
+  )
+VALUES
+(
+    OLD.stock_id,
+    user(),
+    OLD.stock_quantity,
+    NULL,
+    "DELETE",
+    now()
+  );
+
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`order_AFTER_INSERT`
+AFTER
+INSERT
+  ON `order` FOR EACH ROW BEGIN
+UPDATE
+  stock
+SET
+  stock_quantity = stock_quantity + NEW.order_quantity
+WHERE
+  stock_id = NEW.product_product_id;
+
+END $ $ USE `mydb` $ $ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`pursh_order_detail_BEFORE_INSERT` BEFORE
+INSERT
+  ON `pursh_order_detail` FOR EACH ROW BEGIN DECLARE v_stock_quantity INT DEFAULT 0;
+
+DECLARE message VARCHAR(100);
+
+SET
+  message = CONCAT(
+    'ERROR: Cantidad de producto insuficiente en inventario ',
+    'id_producto: ',
+    NEW.product_product_id,
+    'Stock: ',
+    v_stock_quantity,
+    'Cantidad solicitada: ',
+    NEW.pursh_order_detail_quantity,
+    'Faltante: ',
+    NEW.pursh_order_detail_quantity - v_stock_quantity
+  );
+
+SELECT
+  stock_quantity INTO v_stock_quantity
+FROM
+  stock
+WHERE
+  stock_id = NEW.product_product_id;
+
+IF (
+  v_cantidad_stock < NEW.pursh_order_detail_quantity
+) THEN SIGNAL SQLSTATE '45000'
+SET
+  MESSAGE_TEXT = message;
+
+ELSE
+UPDATE
+  stock
+SET
+  stock_quantity = stock_quantity - NEW.pursh_order_detail_quantity
+WHERE
+  stock_id = NEW.product_product_id;
+
+END IF;
+
+END $ $ DELIMITER;
+
+SET
+  SQL_MODE = @OLD_SQL_MODE;
+
+SET
+  FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
+
+SET
+  UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`tipo_usuarios`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (1, 'ADMINISTRADOR');
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (2, 'VENDEDOR');
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (3, 'EMPLEADO');
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (4, 'MEDICO');
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (5, 'CLIENTE');
-INSERT INTO `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`) VALUES (6, 'GERENTE');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (1, 'ADMINISTRADOR');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (2, 'VENDEDOR');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (3, 'EMPLEADO');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (4, 'MEDICO');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (5, 'CLIENTE');
+
+INSERT INTO
+  `mydb`.`tipo_usuarios` (`tu_id`, `tu_descripcion`)
+VALUES
+  (6, 'GERENTE');
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`usuarios`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'Kevin David Becerra', 90123342, 'cll 23 # 12-35', 316677568, 'kevinb@medestetica.com', '123456', 1, 6);
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'Juan Pablo Adames', 10082845, 'cra 21 # 53-24', 300137433, 'juana@medestetica.com', '123456', 1, 3);
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'Kevin Andres Pabon', 95047500, 'av 13 # 11-27', 309147257, 'kevinp@medestetica.com', '123456', 1, 1);
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'David Fernando Parra', 64746826, 'cra 33 # 12-21', 307219752, 'davidp@medestetica.com', '123456', 1, 4);
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'Carlos Santiago Patiño', 33179598, 'cll 24 # 34-53', 318046114, 'santiagop@medestetica.com', '123456', 1, 4);
-INSERT INTO `mydb`.`usuarios` (`us_id`, `us_nombre`, `us_documento`, `us_direccion`, `us_telefono`, `us_correo`, `us_password`, `us_activo`, `tu_id`) VALUES (DEFAULT, 'Miguel Angel Navas', 20361467, 'cll 14 # 23-21', 304028864, 'migueln@medestetica.com', '123456', 1, 2);
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Kevin David Becerra',
+    90123342,
+    'cll 23 # 12-35',
+    316677568,
+    'kevinb@medestetica.com',
+    '123456',
+    1,
+    6
+  );
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Juan Pablo Adames',
+    10082845,
+    'cra 21 # 53-24',
+    300137433,
+    'juana@medestetica.com',
+    '123456',
+    1,
+    3
+  );
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Kevin Andres Pabon',
+    95047500,
+    'av 13 # 11-27',
+    309147257,
+    'kevinp@medestetica.com',
+    '123456',
+    1,
+    1
+  );
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'David Fernando Parra',
+    64746826,
+    'cra 33 # 12-21',
+    307219752,
+    'davidp@medestetica.com',
+    '123456',
+    1,
+    4
+  );
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Carlos Santiago Patiño',
+    33179598,
+    'cll 24 # 34-53',
+    318046114,
+    'santiagop@medestetica.com',
+    '123456',
+    1,
+    4
+  );
+
+INSERT INTO
+  `mydb`.`usuarios` (
+    `us_id`,
+    `us_nombre`,
+    `us_documento`,
+    `us_direccion`,
+    `us_telefono`,
+    `us_correo`,
+    `us_password`,
+    `us_activo`,
+    `tu_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Miguel Angel Navas',
+    20361467,
+    'cll 14 # 23-21',
+    304028864,
+    'migueln@medestetica.com',
+    '123456',
+    1,
+    2
+  );
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`paytype`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`paytype` (`paytype_id`, `paytype_pay`) VALUES (DEFAULT, 'EFECTIVO');
-INSERT INTO `mydb`.`paytype` (`paytype_id`, `paytype_pay`) VALUES (DEFAULT, 'TARJETA');
-INSERT INTO `mydb`.`paytype` (`paytype_id`, `paytype_pay`) VALUES (DEFAULT, 'CREDITO');
+
+INSERT INTO
+  `mydb`.`paytype` (`paytype_id`, `paytype_pay`)
+VALUES
+  (DEFAULT, 'EFECTIVO');
+
+INSERT INTO
+  `mydb`.`paytype` (`paytype_id`, `paytype_pay`)
+VALUES
+  (DEFAULT, 'TARJETA');
+
+INSERT INTO
+  `mydb`.`paytype` (`paytype_id`, `paytype_pay`)
+VALUES
+  (DEFAULT, 'CREDITO');
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`citas`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`citas` (`citas_id`, `citas_date`, `citas_cost`, `citas_status`, `citas_type`, `paytype_paytype_id`) VALUES (DEFAULT, '2023-02-01', 12000, 'Inasistencia', 'Cirugia', 1);
-INSERT INTO `mydb`.`citas` (`citas_id`, `citas_date`, `citas_cost`, `citas_status`, `citas_type`, `paytype_paytype_id`) VALUES (DEFAULT, '2023-02-02', 1, 'Inasistencia', 'Cirugia', 1);
-INSERT INTO `mydb`.`citas` (`citas_id`, `citas_date`, `citas_cost`, `citas_status`, `citas_type`, `paytype_paytype_id`) VALUES (DEFAULT, '2023-02-01', 2, 'Inasistencia', 'Cirugia2', 1);
+
+INSERT INTO
+  `mydb`.`citas` (
+    `citas_id`,
+    `citas_date`,
+    `citas_cost`,
+    `citas_status`,
+    `citas_type`,
+    `paytype_paytype_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    '2023-02-01',
+    12000,
+    'Inasistencia',
+    'Cirugia',
+    1
+  );
+
+INSERT INTO
+  `mydb`.`citas` (
+    `citas_id`,
+    `citas_date`,
+    `citas_cost`,
+    `citas_status`,
+    `citas_type`,
+    `paytype_paytype_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    '2023-02-02',
+    1,
+    'Inasistencia',
+    'Cirugia',
+    1
+  );
+
+INSERT INTO
+  `mydb`.`citas` (
+    `citas_id`,
+    `citas_date`,
+    `citas_cost`,
+    `citas_status`,
+    `citas_type`,
+    `paytype_paytype_id`
+  )
+VALUES
+  (
+    DEFAULT,
+    '2023-02-01',
+    2,
+    'Inasistencia',
+    'Cirugia2',
+    1
+  );
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`product`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'Acqua Biohidratante Renovador Chronos', 105500, 'El Chronos Acqua Biohidratante posee una fórmula ligera,', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'CREMA EXFOLIANTE DE COCO 600 GR NIHLO', 24900, 'Exfolia suavemente tu piel, ayudando a su renovación y mejorando su apariencia mientras las humectas, tonificas y suavizas. ¡Su dulce y deliciosa fragancia de coco cremoso te va a encantar!', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'BODY SCRUB – EXFOLIANTE CORPORAL', 40000, 'Limpia y exfolia tu piel con esta mezcla antioxidante y nutritiva de aceite de coco, manteca de karité, miel, extracto de limón y arándanos, que hidrata y nutre tu piel mientras la exfolia suavemente con sus cristales de sacarosa, dejándola sedosa y luminosa, y con un delicioso aroma a coco limón.', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'LIMPIADOR FACIAL POND\S VITAMIN AGUA DE ROSAS CON 220 ML', 26400, 'Limpiador Facial agua de rosas micelar, que te ayudará a reducir el exceso de grasa de tu piel.', ' ');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'Mesoestetic mesopeel lactic- Peeling Solution AHA 40', 55000, 'El peeling incluye ingredientes centrados en un efecto antiedad y en la despigmentación de la zona, especialmente la marrón producida por alteraciones pigmentarias.', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'Alsace Antioxidante Facial', 178500, 'Previene y protege del estrés oxidativo y prolonga la juventud de la piel, segunda línea de defensa', ' ');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'Sérum rellenador biohidratante', 145900, 'Repone, protege y estimula el ácido hialurónico y los componentes esenciales de retención de agua en la piel, rellenando arrugas y líneas finas de expresión. Ideal para todo tipo de piel.', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'COLÁGENO HIDROLIZADO', 208000, 'Alimento con alto contenido de colágeno hidrolizado que ademas de contener Té verde (el cual es rico en ECGC potente antioxidante que elimina radicales libres)', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'Aceite Post Depilación Starpil 500 ml.', 69900, 'Aceite de masaje descongestivo Antibacteriano y antinflamatorio. Tonifica la epidermis, proporcionando firmeza. Elimina los restos de cera depilatoria dejando la piel perfectamente suave e hidratada.', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'KIT DE PIGMENTOS ESENCIAL PARA LABIOS ORGÁNICO 5ML NUANCE', 390000, 'Para uso en labios y correcciones paramédicas. Uso con dermografo o maquina rotativa y tebori.', '');
-INSERT INTO `mydb`.`product` (`product_id`, `product_name`, `product_sale_price`, `product_description`, `product_image`) VALUES (DEFAULT, 'TATTOODERMA MICROBLADING', 135000, 'Actúa restableciendo la función barrera de la piel, hidratando, calmando y nutriendo las pieles alteradas, mejorando su elasticidad y suavidad. Profunda regeneración de las células dañadas por los efectos de la deshidratación. Calma posibles irritaciones y picores producidos por la sequedad. Mantiene la piel firme, suave y elástica durante más tiempo.', '');
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Acqua Biohidratante Renovador Chronos',
+    105500,
+    'El Chronos Acqua Biohidratante posee una fórmula ligera,',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'CREMA EXFOLIANTE DE COCO 600 GR NIHLO',
+    24900,
+    'Exfolia suavemente tu piel, ayudando a su renovación y mejorando su apariencia mientras las humectas, tonificas y suavizas. ¡Su dulce y deliciosa fragancia de coco cremoso te va a encantar!',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'BODY SCRUB – EXFOLIANTE CORPORAL',
+    40000,
+    'Limpia y exfolia tu piel con esta mezcla antioxidante y nutritiva de aceite de coco, manteca de karité, miel, extracto de limón y arándanos, que hidrata y nutre tu piel mientras la exfolia suavemente con sus cristales de sacarosa, dejándola sedosa y luminosa, y con un delicioso aroma a coco limón.',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'LIMPIADOR FACIAL POND\S VITAMIN AGUA DE ROSAS CON 220 ML',
+    26400,
+    'Limpiador Facial agua de rosas micelar, que te ayudará a reducir el exceso de grasa de tu piel.',
+    ' '
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Mesoestetic mesopeel lactic- Peeling Solution AHA 40',
+    55000,
+    'El peeling incluye ingredientes centrados en un efecto antiedad y en la despigmentación de la zona, especialmente la marrón producida por alteraciones pigmentarias.',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Alsace Antioxidante Facial',
+    178500,
+    'Previene y protege del estrés oxidativo y prolonga la juventud de la piel, segunda línea de defensa',
+    ' '
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Sérum rellenador biohidratante',
+    145900,
+    'Repone, protege y estimula el ácido hialurónico y los componentes esenciales de retención de agua en la piel, rellenando arrugas y líneas finas de expresión. Ideal para todo tipo de piel.',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'COLÁGENO HIDROLIZADO',
+    208000,
+    'Alimento con alto contenido de colágeno hidrolizado que ademas de contener Té verde (el cual es rico en ECGC potente antioxidante que elimina radicales libres)',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'Aceite Post Depilación Starpil 500 ml.',
+    69900,
+    'Aceite de masaje descongestivo Antibacteriano y antinflamatorio. Tonifica la epidermis, proporcionando firmeza. Elimina los restos de cera depilatoria dejando la piel perfectamente suave e hidratada.',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'KIT DE PIGMENTOS ESENCIAL PARA LABIOS ORGÁNICO 5ML NUANCE',
+    390000,
+    'Para uso en labios y correcciones paramédicas. Uso con dermografo o maquina rotativa y tebori.',
+    ''
+  );
+
+INSERT INTO
+  `mydb`.`product` (
+    `product_id`,
+    `product_name`,
+    `product_sale_price`,
+    `product_description`,
+    `product_image`
+  )
+VALUES
+  (
+    DEFAULT,
+    'TATTOODERMA MICROBLADING',
+    135000,
+    'Actúa restableciendo la función barrera de la piel, hidratando, calmando y nutriendo las pieles alteradas, mejorando su elasticidad y suavidad. Profunda regeneración de las células dañadas por los efectos de la deshidratación. Calma posibles irritaciones y picores producidos por la sequedad. Mantiene la piel firme, suave y elástica durante más tiempo.',
+    ''
+  );
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`order`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`order` (`order_id`, `order_date`, `order_cost`, `order_quantity`, `product_product_id`) VALUES (DEFAULT, '2023-03-21', 24960000, 120, 8);
-INSERT INTO `mydb`.`order` (`order_id`, `order_date`, `order_cost`, `order_quantity`, `product_product_id`) VALUES (DEFAULT, '2023-03-13', 9360000, 24, 10);
-INSERT INTO `mydb`.`order` (`order_id`, `order_date`, `order_cost`, `order_quantity`, `product_product_id`) VALUES (DEFAULT, '2023-03-01', 2376000, 90, 4);
-INSERT INTO `mydb`.`order` (`order_id`, `order_date`, `order_cost`, `order_quantity`, `product_product_id`) VALUES (DEFAULT, '2023-03-07', 1494000, 60, 2);
+
+INSERT INTO
+  `mydb`.`order` (
+    `order_id`,
+    `order_date`,
+    `order_cost`,
+    `order_quantity`,
+    `product_product_id`
+  )
+VALUES
+  (DEFAULT, '2023-03-21', 24960000, 120, 8);
+
+INSERT INTO
+  `mydb`.`order` (
+    `order_id`,
+    `order_date`,
+    `order_cost`,
+    `order_quantity`,
+    `product_product_id`
+  )
+VALUES
+  (DEFAULT, '2023-03-13', 9360000, 24, 10);
+
+INSERT INTO
+  `mydb`.`order` (
+    `order_id`,
+    `order_date`,
+    `order_cost`,
+    `order_quantity`,
+    `product_product_id`
+  )
+VALUES
+  (DEFAULT, '2023-03-01', 2376000, 90, 4);
+
+INSERT INTO
+  `mydb`.`order` (
+    `order_id`,
+    `order_date`,
+    `order_cost`,
+    `order_quantity`,
+    `product_product_id`
+  )
+VALUES
+  (DEFAULT, '2023-03-07', 1494000, 60, 2);
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`user_info_has_citas`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`user_info_has_citas` (`citas_citas_id`, `usuarios_us_id`, `user_info_has_citas_obser`) VALUES (1, 1, 'ok');
-INSERT INTO `mydb`.`user_info_has_citas` (`citas_citas_id`, `usuarios_us_id`, `user_info_has_citas_obser`) VALUES (2, 1, 'ok');
-INSERT INTO `mydb`.`user_info_has_citas` (`citas_citas_id`, `usuarios_us_id`, `user_info_has_citas_obser`) VALUES (3, 1, 'ok');
+
+INSERT INTO
+  `mydb`.`user_info_has_citas` (
+    `citas_citas_id`,
+    `usuarios_us_id`,
+    `user_info_has_citas_obser`
+  )
+VALUES
+  (1, 1, 'ok');
+
+INSERT INTO
+  `mydb`.`user_info_has_citas` (
+    `citas_citas_id`,
+    `usuarios_us_id`,
+    `user_info_has_citas_obser`
+  )
+VALUES
+  (2, 1, 'ok');
+
+INSERT INTO
+  `mydb`.`user_info_has_citas` (
+    `citas_citas_id`,
+    `usuarios_us_id`,
+    `user_info_has_citas_obser`
+  )
+VALUES
+  (3, 1, 'ok');
 
 COMMIT;
-
 
 -- -----------------------------------------------------
 -- Data for table `mydb`.`cost`
 -- -----------------------------------------------------
 START TRANSACTION;
+
 USE `mydb`;
-INSERT INTO `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`) VALUES (DEFAULT, 'Factura de luz', 2390000);
-INSERT INTO `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`) VALUES (DEFAULT, 'Nomina empleados', 92347000);
-INSERT INTO `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`) VALUES (DEFAULT, 'Productos limpieza', 2312000);
+
+INSERT INTO
+  `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`)
+VALUES
+  (DEFAULT, 'Factura de luz', 2390000);
+
+INSERT INTO
+  `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`)
+VALUES
+  (DEFAULT, 'Nomina empleados', 92347000);
+
+INSERT INTO
+  `mydb`.`cost` (`cost_id`, `cost_reference`, `cost_value`)
+VALUES
+  (DEFAULT, 'Productos limpieza', 2312000);
 
 COMMIT;
