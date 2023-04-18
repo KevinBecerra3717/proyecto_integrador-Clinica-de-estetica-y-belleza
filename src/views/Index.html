@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title> Pagina Principal </title>
+</head>
+
+<header>
+
+    <style>
+
+    body {
+			background-color: #FFA3FD;
+            font-family: 'Lexend Deca';
+			font-size: 16px;
+            color: #054965;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+        .contenedor-texto {
+            background-color: #fad7fa;;
+            border: 7px solid #FFA3FD;
+            padding: 10px;
+        }
+
+
+        .slider_image {
+            flex-basis: 50%;
+            height: 100%;
+            float: right;
+            position: relative;
+        }
+
+        .slider_buttons {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-1000%);
+            transform: translateY(250%);
+            display: flex;
+            justify-content: space-between;
+            width: 120px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .slider_button_prev,
+        .slider_button_next {
+            border: none;
+            background-color: #FFA3FD;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .slider_button_prev:hover,
+        .slider_button_next:hover {
+            background-color: #973897;
+        }
+
+        .h1-contacto {
+			margin-top: 50px;
+			font-size: 36px;
+			font-weight: bold;
+			text-shadow: 2px 2px #B568FA;
+		}
+
+
+        form {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 5px 5px 10px #B568FA;
+			padding: 20px;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 500px;
+		}
+
+		label {
+            color: #054965;;
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: left;
+		}
+
+		input,
+		textarea {
+			display: block;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 16px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			background-color: #F2F2F2;
+			color: #666666;
+		}
+
+		input[type="submit"] {
+			background-color: #B568FA;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #9933CC;
+		}
+
+    </style>
+    <div class="menu">
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div> 
+        <!-- BARRA NAVBAR --> 
+        <div>
+            <ul class="menu_items">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contactanos">Contactanos</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="social_media"> 
+            <ion-icon name="logo-facebook" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-instagram" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-tiktok" style="height: 50px; width: 50px;"></ion-icon>
+        </div>
+    </div>
+
+</header>
+
+<body>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main_content">
+        <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+        <div class="slider_content">
+            <div class="slider_description">
+                <div class="slider_title">
+                    <h1>Aeshealthic</h1>
+                    <div class="line_gradient">
+                        <div class="line_gradient_separation"></div>
+                    </div>
+                </div>
+                <p>¿Quieres lucir radiante y sentirte más seguro/a en tu piel? <br> <br>¡Ven a nuestro centro estético y descubre cómo podemos ayudarte a alcanzar la mejor versión de ti mismo/a!</p>
+                <a href="#nosotros" class="primary_button">Saber más</a>
+            </div>
+            <div class="slider_image">
+                <img src="img4.png" alt="imagen-instalaciones" class="main_content_img">
+            </div>
+        </div>
+        <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="servicios">
+        <!-- CONTENIDO PAGINA DE SERVICIOS -->
+        <div class="main_content">
+            <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+            <div class="slider_content">
+                <div class="slider_description">
+                    <div class="slider_title">
+                        <h1>Servicios</h1>
+                        <div class="line_gradient">
+                            <div class="line_gradient_separation"></div>
+                        </div>
+                    </div>
+                    <div class="contenedor-texto">
+
+                        <p>¿Quieres lucir radiante y sentirte más seguro/a en tu piel? <br> <br>¡Ven a nuestro centro estético y descubre cómo podemos ayudarte a alcanzar la mejor versión de ti mismo/a!</p>
+                        <a href="#nosotros" class="primary_button">Saber más</a>
+
+                    </div>
+                </div>
+                <div class="slider_image">
+                    <img src="img4.png" alt="imagen-instalaciones" class="circular-image">
+                </div>
+            </div>
+            <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+        </div>
+    
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="nosotros" id="nosotros">
+
+        <!-- CONTENIDO PAGINA DE SERVICIOS -->
+        <div class="main_content">
+            <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+            <div class="slider_content">
+                <div class="slider_description">
+                    <div class="slider_title">
+                        <h1>Nosotros</h1>
+                        <div class="line_gradient">
+                            <div class="line_gradient_separation"></div>
+                        </div>
+                    </div>
+                    <div class="contenedor-texto">
+
+                        <p>¿Quieres lucir radiante y sentirte más seguro/a en tu piel? <br> <br> Nuestra clinica cuenta con médicos especialistas en areas de estetica y belleza, brindando así un servicio de alta calidad.</p>
+
+
+                    </div>
+                </div>
+                <div class="slider_image">
+                    <img src="img4.png" alt="imagen-instalaciones" class="circular-image" style="width: 90%;">
+                    <div class="slider_buttons">
+                        <button class="slider_button_prev"> <- </button>
+                        <button class="slider_button_next"> -> </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+        </div>
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="contactanos" id="contactanos">
+        <h1 class="h1-contacto">Contactanos</h1>
+	    <form action="" method="post">
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="correo">Correo electrónico:</label>
+		<input type="email" id="correo" name="correo" required>
+
+		<label for="telefono">Teléfono celular:</label>
+		<input type="tel" id="telefono" name="telefono" required>
+
+		<label for="consulta">Consulta de interés:</label>
+		<textarea id="consulta" name="consulta" required></textarea>
+
+		<input type="submit" value="Enviar">
+	</form>
+    </div>
+      
+      
+
+    <a href="https://wa.me/+573174307520" class="whatsapp" target="_blank">
+        <ion-icon name="logo-whatsapp" style="height: 50px; width: 50px;"></ion-icon>
+    </a>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

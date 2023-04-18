@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Envio de correo</title>
+</head>
+
+<header>
+
+    <div class="menu-login">
+        <!-- VOLVER -->
+        <div class="volver">
+            <a href="Administrador.html" class="iconos-menu">
+                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="" height="100"></div> 
+
+        <!-- BARRA NAVBAR --> 
+        <b> <div class="nombre"> Bienvenido/a Admin. Miguel </div> </b>
+
+        <!-- BOTONES -->
+        <div class="social_media"> 
+            <ion-icon name="notifications-outline" class="iconos-menu"></ion-icon>
+            <ion-icon name="send-outline" class="iconos-menu"></ion-icon>
+            <ion-icon name="calendar-outline" class="iconos-menu"></ion-icon>
+            <button id="user-btn" class="iconos-menu">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div id="user-popup"></div>
+              
+        </div>
+
+</header>
+
+<body>
+
+    
+
+
+	<style>
+
+        header {
+        border-bottom: 3px solid #054965;
+        }
+
+        .main_content_correo {
+            text-align: center;
+            margin-top: 50px;
+        }
+    
+        form {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    
+        input[type="email"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        }
+    
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+    
+        button[type="submit"] {
+            background-color: #FFA3FD;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        }
+    
+        button[type="submit"]:hover {
+            background-color:#dfb2de;
+        }
+    
+        input:focus,
+        textarea:focus {
+            outline: none;
+            box-shadow: 0px 0px 5px #FFA3FD;
+        }
+    </style>
+
+       <!-- CONTENIDO PRINCIPAL -->
+
+       <div class="main_content_correo">
+        <form id="email-form">
+            <label for="to">Destinatario:</label>
+            <input type="email" id="to" required>
+            <br>
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" required>
+            <br>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" required></textarea>
+            <br>
+            <label for="attachment">Adjuntar archivo:</label>
+            <input type="file" id="attachment" name="attachment">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div> 
+	</div>
+
+
+
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</body>
+</html>
