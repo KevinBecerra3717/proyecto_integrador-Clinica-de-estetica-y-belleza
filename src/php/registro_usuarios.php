@@ -23,4 +23,3 @@
     } else {
         echo "Ocurrió un error al insertar los datos en las tablas.";
     }
-?>
