@@ -47,7 +47,7 @@ se usaron proyectos open source:
 ![arq]
 
 [//]: # (links)
-[pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/src/views/main.html>
+[pg]: <https://kevinbecerra3717.github.io/proyecto_integrador-Clinica-de-estetica-y-belleza/src/views/Index.html>
 [Apache]:<https://httpd.apache.org/>
 [MariaDB]: <https://mariadb.org/>
 
