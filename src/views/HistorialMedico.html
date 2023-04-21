@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Historial medico</title>
+</head>
+
+<header>
+
+    <div class="menu-login">
+        <!-- VOLVER -->
+        <div class="volver">
+            <a href="Cliente.html" class="iconos-menu">
+                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="" height="100"></div> 
+
+        <!-- BARRA NAVBAR --> 
+        <b> <div class="nombre">  </div> </b>
+
+        <!-- BOTONES -->
+        <div class="social_media"> 
+            <ion-icon name="notifications-outline" class="iconos-menu"></ion-icon>
+            <button id="user-btn" class="iconos-menu">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div id="user-popup"></div>
+              
+        </div>
+
+</header>
+
+<body>
+
+<style>
+
+/* Estilo del encabezado */
+.header {
+    border-bottom: 3px solid #054965;
+    background-color: white;
+}
+
+.containerSon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerSon > div {
+  flex: 1;
+}
+
+/* Estilo del contenedor principal */
+.container-historial {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo del título principal */
+.container-historial h1 {
+    color: #054965; 
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo de la sección de información del paciente */
+.informacion-paciente {
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de los elementos de la información del paciente */
+.informacion-paciente li {
+    color: #054965;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la sección del historial médico */
+.historial-medico {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo del título del historial médico */
+.historial-medico h2 {
+    color: #054965;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo de los elementos de la lista del historial médico */
+.historial-medico ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los elementos de la lista del historial médico */
+.historial-medico li {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+/* Estilo de la sección de la foto del paciente */
+.foto-de-paciente {
+    width: 50%;
+    transform: translateX(20%);
+    border-radius: 10px;
+}
+
+.foto-de-paciente img{
+    max-width: 45%; 
+    border-radius: 50%; 
+    border: 2px solid #054965;
+}
+
+        
+</style>
+
+       <!-- CONTENIDO PRINCIPAL -->
+
+    <div class="container-historial">
+        <h1>Clínica Estética Aeshealthic</h1>
+
+        <h2>Información del Paciente</h2>
+        <div class="containerSon">
+            <div style="width: 50%;">
+        
+                <ul class="informacion-paciente">
+                    <li style="color: #054965;"> <strong> &#10148; Nombre: </strong> Lucia D'angelo </li>
+                    <li style="color: #054965;"><strong> &#10148; Edad:</strong> 35 años</li>
+                    <li style="color: #054965;" ><strong> &#10148; Género:</strong> Femenino</li>
+                    <li style="color: #054965;"><strong> &#10148; Teléfono:</strong> 555-1234</li>
+                    <li style="color: #054965;"><strong> &#10148; Correo Electrónico:</strong> LuciaDangelo@example.com</li>
+                    <li style="color: #054965;"><strong> &#10148; Dirección:</strong> Av. Siempreviva 123, San Isidro</li>
+                </ul>
+                
+            </div>
+            <div class="foto-de-paciente">
+                <img src="femaleUser.png" alt="Foto del paciente">
+            </div>
+            
+        </div>
+        
+        <div class="division">
+
+        </div>
+        
+        <div class="historial-medico ">
+          <h2>Historial Médico</h2>
+          <p>Usted ha recibido los siguientes tratamientos:</p>
+          <ul>
+            <li><strong>Botox:</strong> 2 aplicaciones, última aplicación el 15/03/2023</li>
+            <li><strong>Rellenos:</strong> 1 aplicación, última aplicación el 15/03/2023</li>
+            <li><strong>Láser:</strong> 3 sesiones, última sesión el 01/03/2023</li>
+          </ul>
+          <p>Observaciones:</p>
+          <li> Sin observaciones.</li>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</body>
+</html>
