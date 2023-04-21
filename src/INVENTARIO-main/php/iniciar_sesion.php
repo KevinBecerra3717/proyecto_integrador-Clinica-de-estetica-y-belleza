@@ -39,17 +39,17 @@
 
 
     $check_user=conexion();
-    $check_user=$check_user->query("SELECT * FROM usuario WHERE usuario_usuario='$usuario'");
+    $check_user=$check_user->query("SELECT * FROM usuarios WHERE us_direccion='$usuario'");
     if($check_user->rowCount()==1){
 
     	$check_user=$check_user->fetch();
 
-    	if($check_user['usuario_usuario']==$usuario && password_verify($clave, $check_user['usuario_clave'])){
+    	if($check_user['us_direccion']==$usuario && $check_user['usuario_clave']==$clave){
 
-    		$_SESSION['id']=$check_user['usuario_id'];
-    		$_SESSION['nombre']=$check_user['usuario_nombre'];
-    		$_SESSION['apellido']=$check_user['usuario_apellido'];
-    		$_SESSION['usuario']=$check_user['usuario_usuario'];
+    		$_SESSION['id']=$check_user['us_id'];
+    		$_SESSION['nombre']=$check_user['us_nombre'];
+    		$_SESSION['apellido']=$check_user['us_nombre'];
+    		$_SESSION['usuario']=$check_user['us_direccion'];
 
     		if(headers_sent()){
 				echo "<script> window.location.href='index.php?vista=home'; </script>";
