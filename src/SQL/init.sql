@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tipo_usuarios` (
 CREATE TABLE IF NOT EXISTS `mydb`.`usuarios` (
   `us_id` INT NOT NULL AUTO_INCREMENT,
   `us_nombre` VARCHAR(255) NOT NULL,
+  `us_apellido` VARCHAR(255) NOT NULL,
   `us_documento` INT NOT NULL,
   `us_direccion` VARCHAR(255) NOT NULL,
   `us_telefono` INT NOT NULL,
