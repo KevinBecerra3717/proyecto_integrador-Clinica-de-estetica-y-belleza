@@ -10,16 +10,23 @@
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
 
-    $infousuarios1 = "INSERT INTO users(users_email, users_password)
-        VALUES('$correo', '$contrasena')";
-    $infousuarios2 = "INSERT INTO user_info(user_first_name, user_last_name, user_cedula, user_phone, user_address)
-        VALUES('$nombre', '$apellido', '$identificacion', '$telefono', '$direccion')";
+    $infousuarios1 = "INSERT INTO usuarios(us_nombre, us_apellido, us_documento, us_direccion, us_telefono, us_correo, us_password)
+        VALUES('$nombre', '$apellido', '$identificacion', '$direccion', '$telefono', '$correo', '$contrasena')";
 
     $ejecutar1 = mysqli_query($conexion, $infousuarios1);
-    $ejecutar2 = mysqli_query($conexion, $infousuarios2);
 
-    if ($ejecutar1 && $ejecutar2) {
-        echo "Los datos se insertaron correctamente en ambas tablas.";
+    if ($ejecutar1) {
+        echo '
+            <script>
+                alert("Usuario almacenado exitosamente");
+                window.location = "../views/Login.html";
+            </script>
+        ';
     } else {
-        echo "Ocurrió un error al insertar los datos en las tablas.";
+        echo '
+            <script>
+                alert("Intentalo de nuevo, usuario no almacenado");
+                window.location = "../views/Login.html";
+            </script>
+        ';
     }
