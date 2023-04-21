@@ -10,6 +10,46 @@
 </head>
 
 <header>
+    <style>
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: purple;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            z-index: 1;
+            display: none;
+            text-align: center;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .popup-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .popup-buttons button.aceptar {
+            background-color: green;
+        }
+
+        .popup-buttons button.cancelar {
+            background-color: red;
+        }
+    </style>
 
     <div class="menu-login">
         <!-- VOLVER -->
@@ -68,15 +108,15 @@
                 <div class="enlaces">
                     
                     <div class="inventario">
-                        <a href="solicitud-cita.html"> Solicitar una cita </a><br>
+                        <a href="Administrador-inventario.html"> Solicitar una cita </a><br>
                     </div>
                    
                     <div class="usuarios">
-                        <a href="cancelar-cita.html"> Cancelar cita </a><br>
+                        <a  onclick="mostrarPopup()"> Cancelar cita </a><br>
                     </div>
 
                     <div class="clientes">
-                        <a href="HistorialMedico.html"> Historial medico </a><br>
+                        <a href="productos.html"> Historial medico </a><br>
                     </div>
 
                 </div>
@@ -90,6 +130,27 @@
     <div class="advantages">
 
     </div>
+
+    <div class="popup" id="popup">
+        <p>¡Precaución! Se pueden aplicar cargos por cancelación.</p>
+        <button onclick="ocultarPopup()">Aceptar</button>
+        <button onclick="ocultarPopup()">Cancelar</button>
+    </div>
+     <script>
+        function mostrarPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+        
+        function ocultarPopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        
+        function enviar() {
+            // Aquí se puede agregar el código para enviar el reporte de inventario
+            alert("Reporte de inventario enviado");
+            ocultarPopup();
+        }
+    </script>
 
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
