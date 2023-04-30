@@ -9,6 +9,17 @@
     $telefono = $_POST["telefono"];
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
+    $rectcontrasena = $_POST["rectcontrasena"];
+
+    if($contrasena !== $rectcontrasena) {
+        echo '
+            <script>
+                alert("Las contraseñas no coinciden, inténtelo de nuevo");
+                window.location = "../views/registro.html";
+            </script>
+        ';
+        exit;
+    }
 
     $infousuarios1 = "INSERT INTO usuarios(us_nombre, us_apellido, us_documento, us_direccion, us_telefono, us_correo, us_password)
         VALUES('$nombre', '$apellido', '$identificacion', '$direccion', '$telefono', '$correo', '$contrasena')";
@@ -25,8 +36,9 @@
     } else {
         echo '
             <script>
-                alert("Intentalo de nuevo, usuario no almacenado");
+                alert("Inténtalo de nuevo, usuario no almacenado");
                 window.location = "../views/Login.html";
             </script>
         ';
     }
+?>

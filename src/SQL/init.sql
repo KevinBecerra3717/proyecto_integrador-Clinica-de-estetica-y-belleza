@@ -79,16 +79,27 @@ CREATE TABLE IF NOT EXISTS `mydb`.`citas` (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `mydb`.`product`
+-- Table `mydb`.`producto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`product` (
-  `product_id` INT NOT NULL AUTO_INCREMENT,
-  `product_name` VARCHAR(255) NOT NULL,
-  `product_sale_price` INT NOT NULL,
-  `product_description` VARCHAR(500) NULL,
-  `product_image` VARCHAR(500) NULL,
-  PRIMARY KEY (`product_id`)
-) ENGINE = InnoDB;
+CREATE TABLE `producto` (
+  `producto_id` int(20) NOT NULL,
+  `producto_codigo` varchar(70) COLLATE utf8_spanish2_ci NOT NULL,
+  `producto_nombre` varchar(70) COLLATE utf8_spanish2_ci NOT NULL,
+  `producto_precio` decimal(30,2) NOT NULL,
+  `producto_stock` int(25) NOT NULL,
+  `producto_foto` varchar(500) COLLATE utf8_spanish2_ci NOT NULL,
+  `categoria_id` int(7) NOT NULL,
+  `usuario_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`categoria`
+-- -----------------------------------------------------
+CREATE TABLE `categoria` (
+  `categoria_id` int(7) NOT NULL,
+  `categoria_nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `categoria_ubicacion` varchar(150) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`stock`
