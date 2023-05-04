@@ -28,17 +28,44 @@
             background-color: #fad7fa;;
             border: 7px solid #FFA3FD;
             padding: 10px;
+            text-align: left;
 
             
         }
         .contenedor-texto3 {
-            background-color: #fad7fa;;
-            border: 7px solid #FFA3FD;
-            padding: 10px;
-            width: 440px;
-            height: 700px;
-            
+          background-color: #fad7fa;
+          border: 7px solid #FFA3FD;
+          padding: 10px;
+          width: 440px;
+          height: 440px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: left; /* alinea el contenido a la izquierda */
         }
+
+        .imagen-izquierda {
+          max-width: 50%;
+          max-height: 50%;
+          align-self: flex-start; /* Alinea la imagen en la parte superior del contenedor */
+        }
+
+
+
+        .contenedor-texto3 img {
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .contenedor-texto3 p {
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+        }    
+        
         .contenedor-texto2 {
             background-color: #fad7fa;
             border: 7px solid #FFA3FD;
@@ -143,7 +170,7 @@
 
         .fotos {
           width: 6000px;
-          height: 400px;
+          height: 330px;
           /*position: relative;*/
         }
         
@@ -178,9 +205,7 @@
         .col h3 {
           margin-top: 10px;
         }
-	
-	/*Estilos nuevos: */
-        .menu_items a {
+         .menu_items a {
             text-decoration: none;
         }
         .menu_items li {
@@ -265,13 +290,10 @@
                         </div>
                     </div>
 
-                    <div class="contenedor-texto3">
-
-                        <p id="contenedor-texto2" class="contenedor-texto2">En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor. Ya sea que estés buscando una solución para reducir las arrugas, eliminar el vello no deseado, tratar las cicatrices o mejorar la apariencia de tus cejas y labios, tenemos la solución perfecta para ti.</p>
+                    <div class="contenedor-texto3">                
+                        <img id="imagen-izquierda" src="../resources/A.png">
+                        <p id="texto-izquierdo">En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.</p>
                         <a href="#nosotros" class="primary_button">Saber más</a>
-
-                        
-
                     </div>
                 </div>
                 <div class="slider_image">
@@ -280,37 +302,38 @@
                 <div class="fotos">
                           <div class="row">
                             <div class="col">
-                              <img src="../resources/botox.jpg" alt="Servicio 1" onmouseover="cambiarTexto('Este tratamiento es ideal para reducir la apariencia de arrugas y líneas de expresión en el rostro. Se realiza mediante la aplicación de una toxina botulínica en los músculos de la zona tratada, lo que relaja la musculatura y suaviza las arrugas. Es un procedimiento rápido y efectivo que puede durar hasta seis meses.')" onmouseout="restaurarTexto()">
+                              <img id="imagen1" src="../resources/botox.jpg" onmouseover="cambiarImagenYTexto('../resources/botox2.png', 'Ideal para reducir la apariencia de arrugas y líneas de expresión en el rostro.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Botox</h3>
                             </div>
                             <div class="col">
-                              <img src="../resources/colageno.png" alt="Servicio 2" onmouseover="cambiarTexto('El colágeno es una proteína esencial en nuestra piel que se va perdiendo con el paso del tiempo. Este tratamiento consiste en la aplicación de colágeno sintético en la piel para mejorar su apariencia y elasticidad. Es un procedimiento rápido, indoloro y con resultados inmediatos que pueden durar varios meses.')" onmouseout="restaurarTexto()">
+                              <img id="imagen2" src="../resources/colageno.png" onmouseover="cambiarImagenYTexto('../resources/colageno2.png', 'Proteína esencial en nuestra piel que se va perdiendo con el paso del tiempo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Colageno</h3>
                             </div>
+                            
                             <div class="col">
-                              <img src="../resources/dermabrasion.png" alt="Servicio 3" onmouseover="cambiarTexto(' La dermoabrasión es un procedimiento que utiliza un dispositivo para pulir y exfoliar la piel. Es ideal para tratar cicatrices, manchas, arrugas y otros signos de envejecimiento. Es un procedimiento no invasivo que puede durar entre 30 y 60 minutos, dependiendo del área tratada.')" onmouseout="restaurarTexto()">
+                              <img id="imagen3" src="../resources/dermabrasion.png" onmouseover="cambiarImagenYTexto('../resources/dermabrasion2.png', 'Ideal para tratar cicatrices, manchas, arrugas y otros signos de envejecimiento.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Dermabrasión</h3>
                             </div>
                             <div class="col">
-                              <img src="../resources/hilos.png" alt="Servicio 4" onmouseover="cambiarTexto(' Los hilos tensores son una alternativa no quirúrgica al lifting facial. Se utilizan hilos de polidioxanona para tensar la piel y mejorar su apariencia. Es un procedimiento rápido y efectivo que puede durar hasta un año manteniendo de forma deseable la piel.')" onmouseout="restaurarTexto()">
+                              <img id="imagen4" src="../resources/hilos.png" onmouseover="cambiarImagenYTexto('../resources/hilos2.png', 'Alternativa no quirúrgica al lifting facial utilizadapara tensar la piel y mejorar su apariencia.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Hilos Tensores</h3>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col">
-                              <img src="../resources/laser.png" alt="Servicio 5" onmouseover="cambiarTexto('Este tratamiento es ideal para eliminar el vello no deseado de forma permanente. Se realiza mediante la aplicación de un láser en la zona tratada, lo que destruye el folículo piloso y evita que el vello vuelva a crecer. Es un procedimiento seguro y efectivo que puede durar varias sesiones.')" onmouseout="restaurarTexto()">
+                              <img id="imagen5" src="../resources/laser.png" onmouseover="cambiarImagenYTexto('../resources/laser2.png', 'Aplicación laser para eliminar el vello no deseado de forma permanente.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Depilación Láser</h3>
                             </div>
                             <div class="col">
-                              <img src="../resources/micropigmentacion.jpg" alt="Servicio 6" onmouseover="cambiarTexto('La micropigmentación es un tratamiento que utiliza pigmentos semipermanentes para mejorar la apariencia de la piel. Se puede utilizar para mejorar la apariencia de las cejas, los labios, las cicatrices y otras áreas del cuerpo. Es un procedimiento seguro y efectivo que puede durar varios meses.')" onmouseout="restaurarTexto()">
+                              <img id="imagen6" src="../resources/micropigmentacion.jpg" onmouseover="cambiarImagenYTexto('../resources/micropigmentacion2.jpg', 'Utiliza pigmentos semipermanentes para mejorar la apariencia de las cejas, cicatrices y otras áreas del cuerpo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Micropigmentación</h3>
                             </div>
                             <div class="col">
-                              <img src="../resources/tatuaje.jpg" alt="Servicio 7" onmouseover="cambiarTexto('Este tratamiento consiste en la aplicación de tinta en la piel para mejorar su apariencia. Se puede utilizar para mejorar la apariencia de los labios, las cejas, los ojos y otras áreas del cuerpo. Es un procedimiento seguro y efectivo que puede durar varios años.')" onmouseout="restaurarTexto()">
+                              <img id="imagen7" src="../resources/tatuaje.jpg" onmouseover="cambiarImagenYTexto('../resources/tatuaje2.jpg', 'Aplicación de tinta en la piel para mejorar la apariencia de los labios, las cejas y otras áreas del cuerpo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Tatuaje Cosmético</h3>
                             </div>
                             <div class="col">
-                              <img src="../resources/vacuum.png" alt="Servicio 8" onmouseover="cambiarTexto('La vacumterapia, también conocida como terapia de vacío, es un tratamiento estético que consiste en aplicar presión negativa a través de una bomba de vacío en diferentes partes del cuerpo, con el objetivo de mejorar la apariencia de la piel y reducir la celulitis.')" onmouseout="restaurarTexto()">
+                              <img id="imagen5" src="../resources/vacuum.png" onmouseover="cambiarImagenYTexto('../resources/vacuum2.png', 'Aplicación de vacío en diferentes partes del cuerpo, para mejorar la apariencia de la piel y reducir la celulitis.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
                               <h3>Vacumterapia</h3>
                             </div>
                           </div>
@@ -331,29 +354,6 @@
     </div>
     <div class="division">
 
-    </div>
-    <div class="division">
-
-    </div>
-    <div class="division">
-
-    </div>
-
-    <div class="division">
-
-    </div>
-    <div class="division">
-
-    </div>
-    <div class="division">
-
-    </div>
-    <div class="division">
-
-    </div>
-    <div class="division">
-
-    </div>
 
     <div class="nosotros" id="nosotros">
 
@@ -378,10 +378,7 @@
 
                 <div class="slider_image">
                     <img src="img4.png" alt="imagen-instalaciones" class="circular-image" style="width: 90%;">
-                    <div class="slider_buttons">
-                        <button class="slider_button_prev"> <- </button>
-                        <button class="slider_button_next"> -> </button>
-                    </div>
+                    
                 </div>
                 
             </div>
@@ -432,17 +429,23 @@
         <ion-icon name="logo-whatsapp" style="height: 50px; width: 50px;"></ion-icon>
     </a>
     <script type="text/javascript">  
-      /*function cambiarTexto() {
-        document.getElementById("contenedor-texto2").innerHTML = "Este tratamiento es ideal para reducir la apariencia de arrugas y líneas de expresión en el rostro. Se realiza mediante la aplicación de una toxina botulínica en los músculos de la zona tratada, lo que relaja la musculatura y suaviza las arrugas. Es un procedimiento rápido, seguro y efectivo que puede durar hasta seis meses.";
-      }*/
-        function cambiarTexto(texto) {
-          document.getElementById("contenedor-texto2").innerHTML = texto;
-        }
+    function cambiarImagenYTexto(imagen, texto) {
+        var contenedor = document.getElementById("contenedor-texto3");
+        var imagenContenedor = document.getElementById("imagen-izquierda");
+        var textoContenedor = document.getElementById("texto-izquierdo");
+        
+        imagenContenedor.src = imagen;
+        textoContenedor.innerHTML = texto;
+    }
 
-      function restaurarTexto() {
-        document.getElementById("contenedor-texto2").innerHTML = "En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor. Ya sea que estés buscando una solución para reducir las arrugas, eliminar el vello no deseado, tratar las cicatrices o mejorar la apariencia de tus cejas y labios, tenemos la solución perfecta para ti.";
-       
-      }
+    function restaurarImagenYTexto(imagen, texto) {
+        var contenedor = document.getElementById("contenedor-texto3");
+        var imagenContenedor = document.getElementById("imagen-izquierda");
+        var textoContenedor = document.getElementById("texto-izquierdo");
+        
+        imagenContenedor.src = imagen;
+        textoContenedor.innerHTML = texto;
+    }
     </script>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
