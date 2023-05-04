@@ -20,19 +20,8 @@
         <!-- LOGO -->
         <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div>
 
-        <!-- BARRA NAVBAR --> 
-        <div>
-            <ul class="menu_items">
-
-                <li><a href="Index.html#servicios">Servicios</a></li>
-                <li><a href="Index.html#nosotros">Nosotros</a></li>
-                <li><a href="Index.html#contactanos">Contactanos</a></li>
-                
-            </ul>
-        </div>
-
         <!-- REDES SOCIALES -->
-        <div class="social_media"> 
+        <div class="social_media" style="transform: translateX(120px);"> 
             <ion-icon name="logo-facebook" style="height: 50px; width: 50px;"></ion-icon>
             <ion-icon name="logo-instagram" style="height: 50px; width: 50px;"></ion-icon>
             <ion-icon name="logo-tiktok" style="height: 50px; width: 50px;"></ion-icon>
@@ -43,6 +32,39 @@
 
 <body>
 
+  <!-- ESTILOS NUEVOS -->
+  <style>
+
+  h1 {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 span {
+    font-size: 90px;
+    background-image: linear-gradient(to right,#FFA3FD, #66347F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: color-change 5s ease-in-out infinite, jump 1s ease-in-out infinite;
+  }
+
+  .letter {
+    display: inline-block;
+    animation: jump 2s infinite alternate;
+  }
+
+  @keyframes jump {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(20px);
+    }
+  }
+
+  </style>
  <!-- CONTENIDO PRINCIPAL -->
 
 <div class="main_content">
@@ -50,10 +72,19 @@
     <div class="slider_content">
       <div class="slider_description">
         <div class="slider_title">
-          <h1>Aeshealthic</h1>
-          <div class="line_gradient">
-            <div class="line_gradient_separation"></div>
-          </div>
+          <h1>
+            <span class="letter">A</span>
+            <span class="letter">e</span>
+            <span class="letter">s</span>
+            <span class="letter">h</span>
+            <span class="letter">e</span>
+            <span class="letter">a</span>
+            <span class="letter">l</span>
+            <span class="letter">t</span>
+            <span class="letter">h</span>
+            <span class="letter">i</span>
+            <span class="letter">c</span>
+          </h1>
         </div>
         <p>Conéctate con nosotros y descubre un mundo de belleza en nuestra clínica estética</p>
       </div>
