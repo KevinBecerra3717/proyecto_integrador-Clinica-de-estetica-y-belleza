@@ -21,7 +21,7 @@
 
         /*== Verificando usuario ==*/
     	$check_usuario=conexion();
-    	$check_usuario=$check_usuario->query("SELECT * FROM usuario WHERE usuario_id='$id'");
+    	$check_usuario=$check_usuario->query("SELECT * FROM usuarios WHERE us_id='$id'");
 
         if($check_usuario->rowCount()>0){
         	$datos=$check_usuario->fetch();

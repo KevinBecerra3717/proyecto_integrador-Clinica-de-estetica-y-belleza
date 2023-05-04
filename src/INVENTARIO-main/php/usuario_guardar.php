@@ -6,7 +6,7 @@
     $nombre=limpiar_cadena($_POST['usuario_nombre']);
     $apellido=limpiar_cadena($_POST['usuario_apellido']);
 
-    $usuario=limpiar_cadena($_POST['usuario_usuario']);
+    $usuario = $nombre . ' ' . $apellido;
     $email=limpiar_cadena($_POST['usuario_email']);
 
     $clave_1=limpiar_cadena($_POST['usuario_clave_1']);
@@ -14,7 +14,7 @@
 
 
     /*== Verificando campos obligatorios ==*/
-    if($nombre=="" || $apellido=="" || $usuario=="" || $clave_1=="" || $clave_2==""){
+    if($nombre=="" || $apellido=="" || $clave_1=="" || $clave_2==""){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -71,7 +71,7 @@
     if($email!=""){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             $check_email=conexion();
-            $check_email=$check_email->query("SELECT usuario_email FROM usuario WHERE usuario_email='$email'");
+            $check_email=$check_email->query("SELECT us_correo FROM usuarios WHERE us_correo='$email'");
             if($check_email->rowCount()>0){
                 echo '
                     <div class="notification is-danger is-light">
@@ -96,7 +96,7 @@
 
     /*== Verificando usuario ==*/
     $check_usuario=conexion();
-    $check_usuario=$check_usuario->query("SELECT usuario_usuario FROM usuario WHERE usuario_usuario='$usuario'");
+    $check_usuario=$check_usuario->query("SELECT us_usuario FROM usuarios WHERE us_usuario='$usuario'");
     if($check_usuario->rowCount()>0){
         echo '
             <div class="notification is-danger is-light">
@@ -125,7 +125,7 @@
 
     /*== Guardando datos ==*/
     $guardar_usuario=conexion();
-    $guardar_usuario=$guardar_usuario->prepare("INSERT INTO usuario(usuario_nombre,usuario_apellido,usuario_usuario,usuario_clave,usuario_email) VALUES(:nombre,:apellido,:usuario,:clave,:email)");
+    $guardar_usuario=$guardar_usuario->prepare("INSERT INTO usuarios(us_nombre,us_apellido,us_usuario,us_password,us_correo) VALUES(:nombre,:apellido,:usuario,:clave,:email)");
 
     $marcadores=[
         ":nombre"=>$nombre,

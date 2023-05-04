@@ -2,25 +2,25 @@
 	$inicio = ($pagina>0) ? (($pagina * $registros)-$registros) : 0;
 	$tabla="";
 
-	$campos="producto.producto_id,producto.producto_codigo,producto.producto_nombre,producto.producto_precio,producto.producto_stock,producto.producto_foto,producto.categoria_id,producto.usuario_id,categoria.categoria_id,categoria.categoria_nombre,usuario.usuario_id,usuario.usuario_nombre,usuario.usuario_apellido";
+	$campos="product.product_id,product.product_codigo,product.product_name,product.product_sale_price,product.product_stock,product.product_image,product.categoria_id,product.us_id,categoria.categoria_id,categoria.categoria_nombre,usuarios.us_id,usuarios.us_nombre,usuarios.us_apellido";
 
 	if(isset($busqueda) && $busqueda!=""){
 
-		$consulta_datos="SELECT $campos FROM producto INNER JOIN categoria ON producto.categoria_id=categoria.categoria_id INNER JOIN usuario ON producto.usuario_id=usuario.usuario_id WHERE producto.producto_codigo LIKE '%$busqueda%' OR producto.producto_nombre LIKE '%$busqueda%' ORDER BY producto.producto_nombre ASC LIMIT $inicio,$registros";
+		$consulta_datos="SELECT $campos FROM product INNER JOIN categoria ON product.categoria_id=categoria.categoria_id INNER JOIN usuarios ON product.us_id=usuarios.us_id WHERE product.product_codigo LIKE '%$busqueda%' OR product.product_name LIKE '%$busqueda%' ORDER BY product.product_name ASC LIMIT $inicio,$registros";
 
-		$consulta_total="SELECT COUNT(producto_id) FROM producto WHERE producto_codigo LIKE '%$busqueda%' OR producto_nombre LIKE '%$busqueda%'";
+		$consulta_total="SELECT COUNT(product_id) FROM product WHERE product_codigo LIKE '%$busqueda%' OR product_name LIKE '%$busqueda%'";
 
 	}elseif($categoria_id>0){
 
-		$consulta_datos="SELECT $campos FROM producto INNER JOIN categoria ON producto.categoria_id=categoria.categoria_id INNER JOIN usuario ON producto.usuario_id=usuario.usuario_id WHERE producto.categoria_id='$categoria_id' ORDER BY producto.producto_nombre ASC LIMIT $inicio,$registros";
+		$consulta_datos="SELECT $campos FROM product INNER JOIN categoria ON product.categoria_id=categoria.categoria_id INNER JOIN usuarios ON product.us_id=usuarios.us_id WHERE product.categoria_id='$categoria_id' ORDER BY product.product_name ASC LIMIT $inicio,$registros";
 
-		$consulta_total="SELECT COUNT(producto_id) FROM producto WHERE categoria_id='$categoria_id'";
+		$consulta_total="SELECT COUNT(product_id) FROM product WHERE categoria_id='$categoria_id'";
 
 	}else{
 
-		$consulta_datos="SELECT $campos FROM producto INNER JOIN categoria ON producto.categoria_id=categoria.categoria_id INNER JOIN usuario ON producto.usuario_id=usuario.usuario_id ORDER BY producto.producto_nombre ASC LIMIT $inicio,$registros";
+		$consulta_datos="SELECT $campos FROM product INNER JOIN categoria ON product.categoria_id=categoria.categoria_id INNER JOIN usuarios ON product.us_id=usuarios.us_id ORDER BY product.product_name ASC LIMIT $inicio,$registros";
 
-		$consulta_total="SELECT COUNT(producto_id) FROM producto";
+		$consulta_total="SELECT COUNT(product_id) FROM product";
 
 	}
 

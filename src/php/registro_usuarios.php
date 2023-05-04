@@ -1,6 +1,6 @@
 <?php
 
-    include 'conexion_db.php';
+    include "conexion_db.php";
 
     $nombre = $_POST["nombres"];
     $apellido = $_POST["apellidos"];
@@ -10,19 +10,23 @@
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
     $rectcontrasena = $_POST["rectcontrasena"];
+    $usuario = $nombre . ' ' . $apellido;
 
-    if($contrasena !== $rectcontrasena) {
+    if($contrasena!=$rectcontrasena){
         echo '
-            <script>
-                alert("Las contraseñas no coinciden, inténtelo de nuevo");
-                window.location = "../views/registro.html";
-            </script>
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                Las CLAVES que ha ingresado no coinciden
+            </div>
         ';
-        exit;
+        exit();
+    }else{
+        $clave=password_hash($clave_1,PASSWORD_BCRYPT,["cost"=>10]);
     }
 
-    $infousuarios1 = "INSERT INTO usuarios(us_nombre, us_apellido, us_documento, us_direccion, us_telefono, us_correo, us_password)
-        VALUES('$nombre', '$apellido', '$identificacion', '$direccion', '$telefono', '$correo', '$contrasena')";
+
+    $infousuarios1 = "INSERT INTO usuarios(us_usuario, us_documento, us_direccion, us_telefono, us_correo, us_password, us_nombre, us_apellido, us_activo)
+            VALUES('$usuario', '$identificacion', '$direccion', '$telefono', '$correo', '$clave', '$nombre', '$apellido', '5')";
 
     $ejecutar1 = mysqli_query($conexion, $infousuarios1);
 
@@ -37,7 +41,7 @@
         echo '
             <script>
                 alert("Inténtalo de nuevo, usuario no almacenado");
-                window.location = "../views/Login.html";
+                window.location = "../views/Crear-cuenta.html";
             </script>
         ';
     }

@@ -34,7 +34,7 @@
 
     <!-- CONTENIDO PRINCIPAL -->
 
-    <form action="../php/registro_usuarios.php" class="form-loginForm">
+    <form action="../php/registro_usuarios.php" method="POST" class="form-loginForm">
         <label for="nombres" class="label-loginForm">Nombres:</label>
         <input type="text" id="nombres" name="nombres" required>
       
@@ -50,14 +50,14 @@
         <label for="telefono" class="label-loginForm">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono" required>
       
-        <label for="email" class="label-loginForm">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="correo" class="label-loginForm">Correo electrónico:</label>
+        <input type="correo" id="correo" name="correo" required>
       
-        <label for="contraseña" class="label-loginForm">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required>
+        <label for="contrasena" class="label-loginForm">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
       
-        <label for="confirmar_contraseña" class="label-loginForm">Confirmar contraseña:</label>
-        <input type="password" id="confirmar_contraseña" name="confirmar_contraseña" required>
+        <label for="rectcontrasena" class="label-loginForm">Confirmar contraseña:</label>
+        <input type="password" id="rectcontrasena" name="rectcontrasena" required>
 
         <label for="terminos-condiciones" class="label-loginForm">
             <input type="checkbox" id="terminos-condiciones" name="terminos-condiciones" required>

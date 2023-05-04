@@ -52,7 +52,7 @@
     		$_SESSION['usuario']=$check_user['us_direccion'];
 
     		if(headers_sent()){
-				echo "<script> window.location = '../views/index.html'; </script>";
+				echo "<script> window.location = '../views/Cliente.html'; </script>";
 			}else{
 				echo "<script> window.location = '../views/Login.html'; </script>";
 			}

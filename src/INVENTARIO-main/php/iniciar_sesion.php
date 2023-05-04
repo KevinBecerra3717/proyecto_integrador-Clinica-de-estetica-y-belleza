@@ -44,7 +44,7 @@
 
     	$check_user=$check_user->fetch();
 
-    	if($check_user['us_direccion']==$usuario && $check_user['usuario_clave']==$clave){
+    	if($check_user['usuario_usuario']==$usuario && password_verify($clave, $check_user['usuario_clave'])){
 
     		$_SESSION['id']=$check_user['us_id'];
     		$_SESSION['nombre']=$check_user['us_nombre'];

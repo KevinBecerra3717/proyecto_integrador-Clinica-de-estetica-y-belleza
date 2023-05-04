@@ -6,3 +6,4 @@
 	}else{
 		header("Location: index.php?vista=login");
 	}
+?>
