@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
     <title>Historial medico</title>
@@ -39,6 +42,7 @@
 <body>
 
 <style>
+
 
 /* Estilo del encabezado */
 .header {
@@ -80,7 +84,7 @@
     padding: 0;
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(5, 73, 101, 0.3);
 }
 
 /* Estilo de los elementos de la información del paciente */
@@ -96,7 +100,7 @@
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 40px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 2px 2px 4px rgba(5, 73, 101, 0.3);
 }
 
 /* Estilo del título del historial médico */
@@ -138,13 +142,13 @@ margin-bottom: 10px;
        <!-- CONTENIDO PRINCIPAL -->
 
     <div class="container-historial">
-        <h1>Clínica Estética Aeshealthic</h1>
+        <h1>Clínica Estética Aeshealthic ®</h1>
 
-        <h2>Información del Paciente</h2>
+        <h2 style="color: #054965;">Información del Paciente</h2>
         <div class="containerSon">
             <div style="width: 50%;">
         
-                <ul class="informacion-paciente">
+                <ul class="informacion-paciente" style="text-align: left;">
                     <li style="color: #054965;"> <strong> &#10148; Nombre: </strong> Lucia D'angelo </li>
                     <li style="color: #054965;"><strong> &#10148; Edad:</strong> 35 años</li>
                     <li style="color: #054965;" ><strong> &#10148; Género:</strong> Femenino</li>
@@ -164,17 +168,22 @@ margin-bottom: 10px;
 
         </div>
         
-        <div class="historial-medico ">
-          <h2>Historial Médico</h2>
-          <p>Usted ha recibido los siguientes tratamientos:</p>
+        <div class="historial-medico" style="display: grid;">
+            
+          <h1>Historial Médico</h1>
+          <h2>Usted ha recibido los siguientes tratamientos:</h2>
           <ul>
             <li><strong>Botox:</strong> 2 aplicaciones, última aplicación el 15/03/2023</li>
-            <li><strong>Rellenos:</strong> 1 aplicación, última aplicación el 15/03/2023</li>
-            <li><strong>Láser:</strong> 3 sesiones, última sesión el 01/03/2023</li>
+            <li><strong>Rellenos:</strong> 1 aplicación, última aplicación el 21/04/2023</li>
+            <li style="transform: translateX(-40px);"><strong>Láser:</strong> 3 sesiones, última sesión el 01/05/2023</li>
           </ul>
-          <p>Observaciones:</p>
-          <li> Sin observaciones.</li>
-        </div>
+          <h2>Observaciones</h2>
+          <li><strong>Láser:</strong> Evita la exposición al sol, ya que puede aumentar el riesgo de quemaduras y pigmentación irregular. Es importante evitar la exposición al sol directo y utilizar protección solar adecuada.</li>
+          <br>
+        </ul>
+        <h2>Firma del médico responsable:</h2>
+        <h2 style="font-family: 'Dancing Script', cursive; padding: 10px; width: 100%; text-decoration-line: underline;">Miguel N.</h2>
+        
     </div>
 
 
