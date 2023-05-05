@@ -12,29 +12,99 @@
 
 <header class="createAccount">
 
-    <div class="menu-PreLogin-CreateAccount">
-
-        <!-- VOLVER -->
+    <div class="menu-PreLogin">
+        <!-- BOTON DE VOLVER -->
         <div class="notificaciones">
-            <a href="Index.html" class="iconos-menu">
-                <ion-icon name="arrow-back-circle-outline"></ion-icon>
-            </a>
-        </div>
-
-        </div>
+          <a href="Index.html" class="iconos-menu">
+              <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </a>
+      </div>
         <!-- LOGO -->
-        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100">
-        </div>
+        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div>
 
+        <!-- REDES SOCIALES -->
+        <div class="social_media" style="transform: translateX(120px);"> 
+            <ion-icon name="logo-facebook" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-instagram" style="height: 50px; width: 50px;"></ion-icon>
+            <ion-icon name="logo-tiktok" style="height: 50px; width: 50px;"></ion-icon>
+        </div>
     </div>
 
 </header>
 
 <body>
+    <style>
 
+  h1 {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 span {
+    font-size: 90px;
+    background-image: linear-gradient(to right,#FFA3FD, #66347F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: color-change 5s ease-in-out infinite, jump 1s ease-in-out infinite;
+  }
+
+  .letter {
+    display: inline-block;
+    animation: jump 2s infinite alternate;
+  }
+
+  @keyframes jump {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(20px);
+    }
+  }
+
+    .form-loginForm input[type="text"],
+    .form-loginForm input[type="correo"],
+    .form-loginForm input[type="password"] {
+        width: 390px;
+    }
+    .form-loginForm input[type="tel"] {
+        width: 380px;
+    }
+    .slider_content {
+   margin-right: 50px;
+}
+.form-loginForm {
+  background-color: #FFD3FB;
+}
+  </style>
     <!-- CONTENIDO PRINCIPAL -->
 
-    <form action="../php/registro_usuarios.php" method="POST" class="form-loginForm">
+<div class="main_content">
+    <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+    <div class="slider_content">
+        <div class="slider_description">
+        <div class="slider_title">
+          <h1>
+            <span class="letter">A</span>
+            <span class="letter">e</span>
+            <span class="letter">s</span>
+            <span class="letter">h</span>
+            <span class="letter">e</span>
+            <span class="letter">a</span>
+            <span class="letter">l</span>
+            <span class="letter">t</span>
+            <span class="letter">h</span>
+            <span class="letter">i</span>
+            <span class="letter">c</span>
+          </h1>
+        </div>
+        <p>Crea una cuenta y empieza a disfrutar de nuestros servicios.</p>
+      </div>
+      <!-- CAJA DE LOGIN -->
+      <div class="slider_login">
+        <form action="../php/registro_usuarios.php" method="POST" class="form-loginForm">
         <label for="nombres" class="label-loginForm">Nombres:</label>
         <input type="text" id="nombres" name="nombres" required>
       
@@ -67,7 +137,18 @@
       
         <input type="submit" id="crear-cuenta-btn" value="Crear cuenta">
       </form>
-
+      </div>
+    </div>
+    <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+    <?php
+      if(isset($_POST['login_usuario']) && isset($_POST['login_clave'])){
+        require_once "./INVENTARIO-main/php/main.php";
+        require_once "./php/iniciar_sesion.php";
+    }
+  ?>
+</div>
+    
+   
 
 
 
