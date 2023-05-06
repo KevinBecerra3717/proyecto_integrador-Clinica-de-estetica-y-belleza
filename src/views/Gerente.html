@@ -108,7 +108,7 @@
 
                 <div class="enlaces">
                     <div class="inventario">
-                      <a href="Administrador-inventario.html">Reportes</a>
+                      <a id="enviar-reporte" onclick="mostrarPopup()">Reportes</a>
                       <p class="oculto"></p>
                       <p class="oculto"></p>
                     </div>
@@ -137,8 +137,9 @@
     
     <div class="popup" id="popup">
         <p>Deseas enviar un reporte del inventario actual a la casa matriz?</p>
-        <button onclick="enviar()">Aceptar</button>
-        <button onclick="ocultarPopup()">Cancelar</button>
+        <button type="submit" onclick="enviar()">Aceptar</button>
+        <br>
+        <button type="submit" onclick="ocultarPopup()">Cancelar</button>
     </div>
     
     <script>
