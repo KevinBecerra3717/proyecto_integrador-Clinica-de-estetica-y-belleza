@@ -187,10 +187,18 @@ button[type="submit"]:hover {
                 <option value="16:00">Vacumterapia</option>
             </select>
 
-            <button type="submit">Solicitar cita</button>
+            <button type="submit" formaction="Cliente.html" onclick="enviar()">Solicitar cita</button>
         </form>
     </body>
     </html>
+    <script>
+        
+        function enviar() {
+            // Aquí se puede agregar el código para enviar el reporte de inventario
+            alert("La cita ha sido agendada exitosamente!");
+            ocultarPopup();
+        }
+    </script>
     
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
