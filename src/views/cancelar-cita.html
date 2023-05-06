@@ -191,7 +191,7 @@ button[type="submit"]:hover {
 
 
         </style>
-        <form class="solicitud-cita">
+        <form class="solicitud-cita" method="post">
             <h1> Cancelar cita </h1>
 
             <label for="fecha">Fecha de la cita:</label>
@@ -223,29 +223,37 @@ button[type="submit"]:hover {
                 <option value="14:00"> Me reservo el motivo.</option>
             </select>
 
-            <button type="submit" onclick="mostrarPopup()">Cancelar cita</button>
-        </form>
-            <div class="popup" id="popup">
-        <p>¡Precaución! Se pueden aplicar cargos por cancelación.</p>
-        <button type="submit" href="Cliente.html">Aceptar</button>
-        <br>
-        <button type="submit" onclick="ocultarPopup()">Cancelar</button>
-    </div>
-     <script>
-        function mostrarPopup() {
-            document.getElementById("popup").style.display = "block";
-        }
-        
-        function ocultarPopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-        
-        function enviar() {
-            // Aquí se puede agregar el código para enviar el reporte de inventario
-            alert("Reporte de inventario enviado");
-            ocultarPopup();
-        }
-    </script>
+            <button type="submit" id="submit-btn" onclick="mostrarPopup()">Cancelar cita</button>
+        <form>
+  
+
+<div class="popup" id="popup">
+    <p>¡Precaución! Se pueden aplicar cargos por cancelación.</p>
+    <button type="submit" onclick="enviar()">Aceptar</button>
+    <br>
+    <button type="submit" onclick="ocultarPopup()">Cancelar</button>
+</div>
+
+</form>
+
+<script>
+  function mostrarPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("submit-btn").disabled = true;
+}
+
+function enviar() {
+    alert("La cita se agendó correctamente.");
+    window.location.href = "Cliente.html";
+  }
+
+function ocultarPopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("submit-btn").disabled = false;
+}
+</script>
+
+
     </body>
     </html>
     
