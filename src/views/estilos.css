@@ -71,7 +71,7 @@ p {
     display: flex;
     align-items: flex-end;
     height: 500px;
-    border-radius: 50%;
+    border-radius: 0.5%;
     overflow: hidden;
   }
 
@@ -115,20 +115,18 @@ p {
     margin-right: 20px;
 }
 .iconos-menu {
+    color: #054965;
+    font-size: 3em; /* tamaño de fuente */
+    padding: 10px 20px; /* relleno */
     display: flex;
     align-items: center;
 }
+
 .logo {
     margin-left: 20px;
 }
 img {
     display: block;
-}
-
-.iconos-menu{
-    color: #054965;
-    font-size: 3em; /* tamaño de fuente */
-    padding: 10px 20px; /* relleno */
 }
 
 .menu-login{
@@ -356,16 +354,18 @@ color: #2E2E2E;
     }
 
 .slider_login {
+    margin-left: auto;
+    margin-right: 0;
     font-family: 'Lexend Deca';
     float: right;
-    width: 300px;
+    width: 35   0px;
   }
   
 .login-form {
     max-width: 300px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #FFA3FD;
+    border: 10px solid #FFA3FD;
     border-radius: 10px;
   }
   
@@ -406,10 +406,71 @@ color: #2E2E2E;
     background-color: #dfb2de;
   }
   
-  .slider_login {
-    float: right;
-    width: 300px;
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #F8F8F8;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   }
+  
+  .login-form h2 {
+    text-align: center;
+    color: #585858;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .login-form label {
+    color: #585858;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"],
+  .login-form select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #EFEFEF;
+    color: #585858;
+    font-size: 16px;
+  }
+  
+  .login-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("https://cdn.icon-icons.com/icons2/2622/PNG/512/down_arrow_icon_157155.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 30px;
+  }
+  
+  .login-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFA3FD;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form button[type="submit"]:hover {
+    background-color: #FF6BFD;
+  }
+  
 
   #user-btn {
     position: relative;
@@ -465,8 +526,3 @@ color: #2E2E2E;
 .enlaces div:hover .oculto {
     display: block;
 }
-
-
-
-
-  
