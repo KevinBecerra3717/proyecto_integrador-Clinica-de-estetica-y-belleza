@@ -68,7 +68,7 @@
 
     /*== Verificando codigo ==*/
     $check_codigo=conexion();
-    $check_codigo=$check_codigo->query("SELECT producto_codigo FROM producto WHERE producto_codigo='$codigo'");
+    $check_codigo=$check_codigo->query("SELECT product_codigo FROM product WHERE product_codigo='$codigo'");
     if($check_codigo->rowCount()>0){
         echo '
             <div class="notification is-danger is-light">
@@ -83,7 +83,7 @@
 
     /*== Verificando nombre ==*/
     $check_nombre=conexion();
-    $check_nombre=$check_nombre->query("SELECT producto_nombre FROM producto WHERE producto_nombre='$nombre'");
+    $check_nombre=$check_nombre->query("SELECT product_name FROM product WHERE product_name='$nombre'");
     if($check_nombre->rowCount()>0){
         echo '
             <div class="notification is-danger is-light">
@@ -192,7 +192,7 @@
 
 	/*== Guardando datos ==*/
     $guardar_producto=conexion();
-    $guardar_producto=$guardar_producto->prepare("INSERT INTO producto(producto_codigo,producto_nombre,producto_precio,producto_stock,producto_foto,categoria_id,usuario_id) VALUES(:codigo,:nombre,:precio,:stock,:foto,:categoria,:usuario)");
+    $guardar_producto=$guardar_producto->prepare("INSERT INTO product(product_codigo,product_name,product_sale_price,product_stock,product_image,categoria_id,us_id) VALUES(:codigo,:nombre,:precio,:stock,:foto,:categoria,:usuario)");
 
     $marcadores=[
         ":codigo"=>$codigo,

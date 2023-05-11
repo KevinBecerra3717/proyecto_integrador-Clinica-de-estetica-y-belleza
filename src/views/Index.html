@@ -1,34 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
     <title> Pagina Principal </title>
 </head>
 
 <header>
 
+    <style>
+
+    body {
+			background-color: #FFA3FD;
+            font-family: 'Lexend Deca';
+			font-size: 16px;
+            color: #054965;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+        .contenedor-texto2 {
+            background-color: #fad7fa;;
+            border: 7px solid #FFA3FD;
+            padding: 10px;
+            text-align: left;
+
+            
+        }
+        .contenedor-texto3 {
+          background-color: #fad7fa;
+          border: 7px solid #FFA3FD;
+          padding: 10px;
+          width: 440px;
+          height: 440px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: left; /* alinea el contenido a la izquierda */
+        }
+
+        .imagen-izquierda {
+          max-width: 50%;
+          max-height: 50%;
+          align-self: flex-start; /* Alinea la imagen en la parte superior del contenedor */
+        }
+
+
+
+        .contenedor-texto3 img {
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .contenedor-texto3 p {
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+        }    
+        
+        .contenedor-texto2 {
+            background-color: #fad7fa;
+            border: 7px solid #FFA3FD;
+            padding: 10px;
+            width: 400px;
+            height: 550px;
+        }
+
+
+        .slider_image {
+            flex-basis: 50%;
+            height: 100%;
+            float: right;
+            position: relative;
+        }
+
+        .slider_buttons {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-1000%);
+            transform: translateY(250%);
+            display: flex;
+            justify-content: space-between;
+            width: 120px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .slider_button_prev,
+        .slider_button_next {
+            border: none;
+            background-color: #FFA3FD;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .slider_button_prev:hover,
+        .slider_button_next:hover {
+            background-color: #973897;
+        }
+
+        .h1-contacto {
+			margin-top: 50px;
+			font-size: 36px;
+			font-weight: bold;
+			text-shadow: 2px 2px #B568FA;
+		}
+
+
+        form {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 5px 5px 10px #B568FA;
+			padding: 20px;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 500px;
+		}
+
+		label {
+            color: #054965;;
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: left;
+		}
+
+		input,
+		textarea {
+			display: block;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 16px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			background-color: #F2F2F2;
+			color: #666666;
+		}
+
+		input[type="submit"] {
+			background-color: #B568FA;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #9933CC;
+		}
+
+        .fotos {
+          width: 6000px;
+          height: 330px;
+          /*position: relative;*/
+        }
+        
+        #fotos {
+          position: absolute;
+          top: 50px;
+          left: 50px;
+          width: 300px;
+          height: 200px;
+          min-width: 200px;
+          min-height: 150px;
+        }
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 40px;
+        }
+
+        .col {
+          width: calc(25% - 10px);
+          text-align: center;
+        }
+
+        .col img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+        .col h3 {
+          margin-top: 10px;
+        }
+         .menu_items a {
+            text-decoration: none;
+        }
+        .menu_items li {
+            list-style-type: none;
+        }
+
+        .menu_items li a {
+            display: inline-block;
+            padding: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+        .menu_items li a:hover {
+            transform: scale(1.2);
+            color: #fff;
+            background-color: #9933CC;
+        }
+
+        .primary_button {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #FFA3FD;
+          color: #FFF;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+          box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
+        }
+
+        .primary_button:hover {
+          background-color: #721172;
+          transform: translateY(-3px);
+          box-shadow: 0px 6px 0px 0px rgba(0,0,0,0.2);
+        }
+        .main_content_img {
+            display: flex;
+            align-items: flex-end;
+            height: 500px;
+            border-radius: 0.5%;
+            overflow: hidden;
+          }
+
+    </style>
     <div class="menu">
         <!-- LOGO -->
-        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div>
-        <!-- BARRA NAVBAR -->
+        <div class="logo"> <img src="logo.png" alt="logo de la empresa en formato PNG" height="100"></div> 
+        <!-- BARRA NAVBAR --> 
         <div>
             <ul class="menu_items">
-                <li style="text-decoration: none;"><a href="Servicios.html">Servicios</a></li>
-                <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a href="Contactanos.html">Contactanos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
                 <li><a href="Login.html">Login</a></li>
             </ul>
         </div>
         <!-- REDES SOCIALES -->
-        <div class="social_media">
+        <div class="social_media"> 
             <ion-icon name="logo-facebook" style="height: 50px; width: 50px;"></ion-icon>
             <ion-icon name="logo-instagram" style="height: 50px; width: 50px;"></ion-icon>
             <ion-icon name="logo-tiktok" style="height: 50px; width: 50px;"></ion-icon>
@@ -45,32 +281,197 @@
         <div class="slider_content">
             <div class="slider_description">
                 <div class="slider_title">
-                    <h1>Aeshealthic</h1>
+                    <h1 style="color: #FB36F7;">Aeshealthic</h1>
                     <div class="line_gradient">
                         <div class="line_gradient_separation"></div>
                     </div>
                 </div>
-                <p>¿Quieres lucir radiante y sentirte más seguro/a en tu piel? ¡Ven a nuestro centro estético y descubre
-                    cómo podemos ayudarte a alcanzar la mejor versión de ti mismo/a!</p>
-                <a href="Servicios.html" class="primary_button">Saber más</a>
+                <p style="text-align:left; margin-right: 20px;">¿Quieres lucir radiante y sentirte más seguro/a en tu piel? <br> <br>¡Ven a nuestro centro estético y descubre cómo podemos ayudarte a alcanzar la mejor versión de ti mismo/a!</p>
+                <a href="#nosotros" class="primary_button">Saber más</a>
             </div>
             <div class="slider_image">
-                <img src="img4.png" alt="imagen-instalaciones" class="circular-image">
+                <img src="../resources/img4.png" alt="imagen-instalaciones" class="main_content_img">
             </div>
         </div>
         <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
     </div>
 
-    <div class="advantages">
+    <div class="division">
 
     </div>
+
+    <div class="servicios">
+        <!-- CONTENIDO PAGINA DE SERVICIOS -->
+        <div class="main_content">
+            <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+            <div class="slider_content">
+                <div class="slider_description">
+                    <div class="slider_title">
+                        <h1 style="color: #FB36F7;">Servicios</h1>
+                        <div class="line_gradient">
+                            <div class="line_gradient_separation"></div>
+                        </div>
+                    </div>
+
+                    <div class="contenedor-texto3">                
+                        <img id="imagen-izquierda" src="../resources/A.png">
+                        <p id="texto-izquierdo">En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.</p>
+                        <a href="#nosotros" class="primary_button">Saber más</a>
+                    </div>
+                </div>
+                <div class="slider_image">
+                    <!--img src="img4.png" alt="imagen-instalaciones" class="circular-image"-->
+                </div>
+                <div class="fotos">
+                          <div class="row">
+                            <div class="col">
+                              <img id="imagen1" src="../resources/botox.jpg" onmouseover="cambiarImagenYTexto('../resources/botox2.png', 'Ideal para reducir la apariencia de arrugas y líneas de expresión en el rostro.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Botox</h3>
+                            </div>
+                            <div class="col">
+                              <img id="imagen2" src="../resources/colageno.png" onmouseover="cambiarImagenYTexto('../resources/colageno2.png', 'Proteína esencial en nuestra piel que se va perdiendo con el paso del tiempo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Colágeno</h3>
+                            </div>
+                            
+                            <div class="col">
+                              <img id="imagen3" src="../resources/dermabrasion.png" onmouseover="cambiarImagenYTexto('../resources/dermabrasion2.png', 'Ideal para tratar cicatrices, manchas, arrugas y otros signos de envejecimiento.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Dermabrasión</h3>
+                            </div>
+                            <div class="col">
+                              <img id="imagen4" src="../resources/hilos.png" onmouseover="cambiarImagenYTexto('../resources/hilos2.png', 'Alternativa no quirúrgica al lifting facial utilizadapara tensar la piel y mejorar su apariencia.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Hilos Tensores</h3>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <img id="imagen5" src="../resources/laser.png" onmouseover="cambiarImagenYTexto('../resources/laser2.png', 'Aplicación laser para eliminar el vello no deseado de forma permanente.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Depilación Láser</h3>
+                            </div>
+                            <div class="col">
+                              <img id="imagen6" src="../resources/micropigmentacion.jpg" onmouseover="cambiarImagenYTexto('../resources/micropigmentacion2.jpg', 'Utiliza pigmentos semipermanentes para mejorar la apariencia de las cejas, cicatrices y otras áreas del cuerpo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Micropigmentación</h3>
+                            </div>
+                            <div class="col">
+                              <img id="imagen7" src="../resources/tatuaje.jpg" onmouseover="cambiarImagenYTexto('../resources/tatuaje2.jpg', 'Aplicación de tinta en la piel para mejorar la apariencia de los labios, las cejas y otras áreas del cuerpo.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Tatuaje Cosmético</h3>
+                            </div>
+                            <div class="col">
+                              <img id="imagen5" src="../resources/vacuum.png" onmouseover="cambiarImagenYTexto('../resources/vacuum2.png', 'Aplicación de vacío en diferentes partes del cuerpo, para mejorar la apariencia de la piel y reducir la celulitis.')" onmouseout="restaurarImagenYTexto('../resources/A.png', 'En nuestra clínica, ofrecemos una amplia variedad de servicios diseñados para ayudarte a verte y sentirte mejor.')">
+                              <h3>Vacumterapia</h3>
+                            </div>
+                          </div>
+                        </div>
+            </div>
+            <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+
+        </div>
+
+            
+    </div>
+
+    <div class="division">
+
+    </div>
+    <div class="division">
+
+    </div>
+    <div class="division">
+
+
+    <div class="nosotros" id="nosotros">
+
+        <!-- CONTENIDO PAGINA DE SERVICIOS -->
+        <div class="main_content">
+            <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+            <div class="slider_content">
+                <div class="slider_description">
+                    <div class="slider_title">
+                        <h1 style="color: #FB36F7;">Nosotros</h1>
+                        <div class="line_gradient">
+                            <div class="line_gradient_separation"></div>
+                        </div>
+                    </div>
+                    <div class="contenedor-texto">
+
+                        <p style="text-align:left; margin-right: 20px;">Contamos con un equipo de profesionales altamente capacitados y certificados en diversas técnicas no invasivas de rejuvenecimiento facial y corporal.<br> <br></p>
+
+
+                    </div>
+                </div>
+
+            
+                <div class="slider_image">
+                    <img src="../resources/gif.gif" alt="GIF animado">
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+
+        
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+
+    <div class="division">
+
+    </div>
+    <div class="division">
+
+    </div>
+
+    <div class="contactanos" id="contactanos">
+        <h1 class="h1-contacto">Contáctanos</h1>
+	    <form action="" method="post">
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="correo">Correo electrónico:</label>
+		<input type="email" id="correo" name="correo" required>
+
+		<label for="telefono">Teléfono celular:</label>
+		<input type="tel" id="telefono" name="telefono" required>
+
+		<label for="consulta">Consulta de interés:</label>
+		<textarea id="consulta" name="consulta" required></textarea>
+
+		<input type="submit" value="Enviar">
+	</form>
+    </div>
+      
+    
 
     <a href="https://wa.me/+573174307520" class="whatsapp" target="_blank">
         <ion-icon name="logo-whatsapp" style="height: 50px; width: 50px;"></ion-icon>
     </a>
+    <script type="text/javascript">  
+    function cambiarImagenYTexto(imagen, texto) {
+        var contenedor = document.getElementById("contenedor-texto3");
+        var imagenContenedor = document.getElementById("imagen-izquierda");
+        var textoContenedor = document.getElementById("texto-izquierdo");
+        
+        imagenContenedor.src = imagen;
+        textoContenedor.innerHTML = texto;
+    }
 
-
-
+    function restaurarImagenYTexto(imagen, texto) {
+        var contenedor = document.getElementById("contenedor-texto3");
+        var imagenContenedor = document.getElementById("imagen-izquierda");
+        var textoContenedor = document.getElementById("texto-izquierdo");
+        
+        imagenContenedor.src = imagen;
+        textoContenedor.innerHTML = texto;
+    }
+    </script>
+    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

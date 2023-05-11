@@ -6,7 +6,7 @@
 
     /*== Verificando producto ==*/
     $check_producto=conexion();
-    $check_producto=$check_producto->query("SELECT * FROM producto WHERE producto_id='$product_id'");
+    $check_producto=$check_producto->query("SELECT * FROM product WHERE product_id='$product_id'");
 
     if($check_producto->rowCount()==1){
         $datos=$check_producto->fetch();
@@ -118,7 +118,7 @@
 
     /*== Actualizando datos ==*/
     $actualizar_producto=conexion();
-    $actualizar_producto=$actualizar_producto->prepare("UPDATE producto SET producto_foto=:foto WHERE producto_id=:id");
+    $actualizar_producto=$actualizar_producto->prepare("UPDATE product SET product_image=:foto WHERE product_id=:id");
 
     $marcadores=[
         ":foto"=>$foto,

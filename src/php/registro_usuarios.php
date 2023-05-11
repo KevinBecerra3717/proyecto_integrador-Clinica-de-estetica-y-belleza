@@ -1,6 +1,6 @@
 <?php
 
-    include 'conexion_db.php';
+    include "conexion_db.php";
 
     $nombre = $_POST["nombres"];
     $apellido = $_POST["apellidos"];
@@ -9,17 +9,40 @@
     $telefono = $_POST["telefono"];
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
+    $rectcontrasena = $_POST["rectcontrasena"];
+    $usuario = $nombre . ' ' . $apellido;
 
-    $infousuarios1 = "INSERT INTO users(users_email, users_password)
-        VALUES('$correo', '$contrasena')";
-    $infousuarios2 = "INSERT INTO user_info(user_first_name, user_last_name, user_cedula, user_phone, user_address)
-        VALUES('$nombre', '$apellido', '$identificacion', '$telefono', '$direccion')";
+    if($contrasena!=$rectcontrasena){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                Las CLAVES que ha ingresado no coinciden
+            </div>
+        ';
+        exit();
+    }else{
+        $clave=password_hash($clave_1,PASSWORD_BCRYPT,["cost"=>10]);
+    }
+
+
+    $infousuarios1 = "INSERT INTO usuarios(us_usuario, us_documento, us_direccion, us_telefono, us_correo, us_password, us_nombre, us_apellido, us_activo)
+            VALUES('$usuario', '$identificacion', '$direccion', '$telefono', '$correo', '$clave', '$nombre', '$apellido', '5')";
 
     $ejecutar1 = mysqli_query($conexion, $infousuarios1);
-    $ejecutar2 = mysqli_query($conexion, $infousuarios2);
 
-    if ($ejecutar1 && $ejecutar2) {
-        echo "Los datos se insertaron correctamente en ambas tablas.";
+    if ($ejecutar1) {
+        echo '
+            <script>
+                alert("Usuario almacenado exitosamente");
+                window.location = "../views/Login.html";
+            </script>
+        ';
     } else {
-        echo "Ocurrió un error al insertar los datos en las tablas.";
+        echo '
+            <script>
+                alert("Inténtalo de nuevo, usuario no almacenado");
+                window.location = "../views/Crear-cuenta.html";
+            </script>
+        ';
     }
+?>

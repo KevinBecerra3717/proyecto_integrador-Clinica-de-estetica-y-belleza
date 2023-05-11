@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Gerente</title>
+</head>
+
+<header>
+
+    <div class="menu-login">
+        <!-- VOLVER -->
+        <div class="volver">
+            <a href="Index.html" class="iconos-menu">
+                
+            </a>
+        </div>
+        <!-- LOGO -->
+        <div class="logo"> <img src="logo.png" alt="" height="100"></div> 
+
+        <!-- BARRA NAVBAR --> 
+        <b> <div class="nombre"> Bienvenido/a Gerente <?php echo $_SESSION['nombre']; ?> </div> </b>
+
+        <!-- BOTONES -->
+        <div class="social_media"> 
+
+            <ion-icon name="notifications-outline" class="iconos-menu"></ion-icon>
+            
+            <ion-icon name="document-text-outline" class="iconos-menu" onclick="mostrarPopup()"></ion-icon>
+            <ion-icon name="calendar-outline" class="iconos-menu"></ion-icon>
+            <button id="user-btn" class="iconos-menu">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div id="user-popup"></div>
+              
+        </div>
+
+</header>
+
+<body>
+
+    <style>
+        h1{
+            color: #054965;
+        }      
+
+
+        .oculto {
+            display: none;
+        }
+        .enlaces div:hover .oculto {
+            display: block;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: purple;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            z-index: 1;
+            display: none;
+            text-align: center;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .popup-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .popup-buttons button.aceptar {
+            background-color: green;
+        }
+
+        .popup-buttons button.cancelar {
+            background-color: red;
+        }
+        
+    </style>
+       <!-- CONTENIDO PRINCIPAL -->
+       <div class="main_content">
+        <div class="left_arrow"><img src="./images/left_hand.png" alt=""></div>
+        <div class="slider_content">
+            <div class="slider_description">
+                <div class="slider_title">
+                    <h1 style="color: #FB36F7;">Gerente</h1>
+                    <div class="line_gradient">
+                        <div class="line_gradient_separation"></div>
+                    </div>
+                </div>
+
+                <div class="enlaces">
+                    <div class="inventario">
+                      <a id="enviar-reporte" onclick="mostrarPopup()">Reportes</a>
+                      <p class="oculto"></p>
+                      <p class="oculto"></p>
+                    </div>
+                    
+                    <div class="usuarios">
+                      <a href="../INVENTARIO-main/index.php">Inventario</a>
+                      <p class="oculto"></p>
+                    </div>
+                  
+                    <div class="clientes">
+                      <a href="../INVENTARIO-main/index.php">Clientes</a>
+                      <p class="oculto"></p>
+                    </div>
+                  </div>
+                  
+
+            </div>
+                    <div style="float: left; width: 50%;">
+                        <img src="../resources/gerente.png">
+                    </div>
+        </div>
+        <div class="right_arrow"><img src="./images/right_hand.png" alt=""></div>
+    </div>
+
+    <div class="advantages">
+
+    </div>
+    
+    <div class="popup" id="popup">
+        <p>Deseas enviar un reporte del inventario actual a la casa matriz?</p>
+        <button type="submit" onclick="enviar()">Aceptar</button>
+        <br>
+        <button type="submit" onclick="ocultarPopup()">Cancelar</button>
+    </div>
+    
+    <script>
+        function mostrarPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+        
+        function ocultarPopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        
+        function enviar() {
+            // Aquí se puede agregar el código para enviar el reporte de inventario
+            alert("Reporte de inventario enviado");
+            ocultarPopup();
+        }
+    </script>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</body>
+</html>

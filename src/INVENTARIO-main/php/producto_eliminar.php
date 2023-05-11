@@ -4,14 +4,14 @@
 
     /*== Verificando producto ==*/
     $check_producto=conexion();
-    $check_producto=$check_producto->query("SELECT * FROM producto WHERE producto_id='$product_id_del'");
+    $check_producto=$check_producto->query("SELECT * FROM product WHERE product_id='$product_id_del'");
 
     if($check_producto->rowCount()==1){
 
     	$datos=$check_producto->fetch();
 
     	$eliminar_producto=conexion();
-    	$eliminar_producto=$eliminar_producto->prepare("DELETE FROM producto WHERE producto_id=:id");
+    	$eliminar_producto=$eliminar_producto->prepare("DELETE FROM product WHERE product_id=:id");
 
     	$eliminar_producto->execute([":id"=>$product_id_del]);
 

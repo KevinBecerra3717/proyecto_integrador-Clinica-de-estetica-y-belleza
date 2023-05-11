@@ -13,7 +13,7 @@
 
 		/*== Verificando producto ==*/
     	$check_producto=conexion();
-    	$check_producto=$check_producto->query("SELECT * FROM producto WHERE producto_id='$id'");
+    	$check_producto=$check_producto->query("SELECT * FROM product WHERE product_id='$id'");
 
         if($check_producto->rowCount()>0){
         	$datos=$check_producto->fetch();
